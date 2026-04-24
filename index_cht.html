@@ -163,6 +163,39 @@
     }
     .cta .primary { background: var(--black); color: #fff; }
     .cta .secondary { background: #f8f0dd; color: var(--accent-dark); border-color: #dbcaa6; }
+    .quick-links {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border: 1px solid #dbcaa6;
+      background: #fbf5e8;
+    }
+    .quick-links h4 {
+      margin: 0;
+      font-size: 15px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .quick-links p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+    .quick-link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .quick-link-row a {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 14px;
+      border: 1px solid #c8b388;
+      background: var(--paper);
+      color: var(--accent-dark);
+    }
     .lead-panel {
       border-left: 1px solid var(--line);
       padding-left: 24px;
@@ -337,6 +370,29 @@
       line-height: 1.88;
       font-size: 16px;
     }
+    .issue-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .issue-status {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #c8b388;
+      background: #fbf5e8;
+      color: var(--accent-dark);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+    .issue-status.latest {
+      border-color: var(--black);
+      background: var(--black);
+      color: #fff;
+    }
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -481,6 +537,10 @@
         const leadMainHref = latest.chtSelector || latest.path || './';
         const leadEnHref = latest.enSelector || './index_en.html';
         const leadAltHref = latest.path || leadMainHref;
+        const latestBasePath = latest.path || './';
+        const leadRadarHref = latest.radarCht || `${latestBasePath}radar_try_cht.html`;
+        const leadSatelliteHref = latest.satelliteCht || `${latestBasePath}satellite_try_cht.html`;
+        const leadNwpHref = latest.nwpCht || `${latestBasePath}nwp_try_cht.html`;
 
         leadStory.innerHTML = `
           <article class="lead-story">
@@ -491,6 +551,15 @@
               <a class="primary" href="${escapeHtml(leadMainHref)}">開啟本期中文版</a>
               <a class="secondary" href="${escapeHtml(leadEnHref)}">Open English Selector</a>
               <a class="secondary" href="${escapeHtml(leadAltHref)}">進入期號主頁</a>
+            </div>
+            <div class="quick-links">
+              <h4>本期快捷入口</h4>
+              <p>直接打開今天／最新一期的主題頁：</p>
+              <div class="quick-link-row">
+                <a href="${escapeHtml(leadRadarHref)}">雷達</a>
+                <a href="${escapeHtml(leadSatelliteHref)}">衛星</a>
+                <a href="${escapeHtml(leadNwpHref)}">數值天氣預報</a>
+              </div>
             </div>
             <div class="meta-strip">
               <span>日期：${escapeHtml(latest.displayDate || latest.date || '')}</span>
@@ -522,11 +591,13 @@
         leadLabel.textContent = latest.thumbnailLabelCht || latest.thumbnailLabel || latest.displayDate || '最新一期';
 
         const grid = document.getElementById('issue-grid');
-        grid.innerHTML = issues.map(issue => {
+        grid.innerHTML = issues.map((issue, index) => {
           const title = issue.titleCht || issue.title || 'Science Weekly';
           const subtitle = issue.subtitleCht || issue.subtitle || '';
           const summary = issue.summaryCht || issue.summary || subtitle;
           const tags = (issue.tagsCht && issue.tagsCht.length ? issue.tagsCht : (issue.tags || []));
+          const statusLabel = index === 0 ? '最新一期' : '往期';
+          const statusClass = index === 0 ? 'issue-status latest' : 'issue-status';
           return `
             <article class="issue-card">
               <div class="thumb" data-label="${escapeHtml(issue.thumbnailLabelCht || issue.thumbnailLabel || issue.displayDate || title)}">
@@ -541,7 +612,10 @@
                 </div>
               </div>
               <div>
-                <div class="kicker">${escapeHtml(issue.displayDate || issue.date || '')}</div>
+                <div class="issue-meta">
+                  <div class="kicker">${escapeHtml(issue.displayDate || issue.date || '')}</div>
+                  <span class="${statusClass}">${statusLabel}</span>
+                </div>
                 <h3>${escapeHtml(title)}</h3>
                 <p class="summary">${escapeHtml(summary)}</p>
                 <div class="tags">${tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>

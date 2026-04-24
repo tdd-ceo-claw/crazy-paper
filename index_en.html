@@ -351,6 +351,48 @@
       padding: 4px 10px;
       font-size: 12px;
     }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #d2b475;
+      background: #f7e7bf;
+      color: #6b4d11;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    .quicklinks {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid #e3d5b7;
+      background: linear-gradient(180deg, #fffaf0, #f8eed7);
+    }
+    .quicklinks-title {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .quicklinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .quicklinks-grid a {
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid #caa869;
+      background: #fffdf8;
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 600;
+    }
     .linkset {
       display: flex;
       flex-wrap: wrap;
@@ -480,16 +522,28 @@
         const leadMainHref = latest.enSelector || latest.path || './';
         const leadChtHref = latest.chtSelector || './index_cht.html';
         const leadAltHref = latest.path || leadMainHref;
+        const issueBasePath = latest.path || './';
+        const leadRadarHref = latest.radarEn || `${issueBasePath}radar_try_en.html`;
+        const leadSatelliteHref = latest.satelliteEn || `${issueBasePath}satellite_try_en.html`;
+        const leadNwpHref = latest.nwpEn || `${issueBasePath}nwp_try_en.html`;
 
         leadStory.innerHTML = `
           <article class="lead-story">
             <div class="kicker">Front Page Feature</div>
-            <h3>${escapeHtml((latest.displayDate || latest.date || '') + ' | ' + leadTitle)}</h3>
+            <h3>${escapeHtml((latest.displayDate || latest.date || '') + ' | ' + leadTitle)}<span class="status-badge">Latest Issue</span></h3>
             <p>${escapeHtml(leadSummary)}</p>
             <div class="cta">
               <a class="primary" href="${escapeHtml(leadMainHref)}">Open English selector</a>
               <a class="secondary" href="${escapeHtml(leadChtHref)}">開啟中文版選單</a>
               <a class="secondary" href="${escapeHtml(leadAltHref)}">Open main issue page</a>
+            </div>
+            <div class="quicklinks">
+              <div class="quicklinks-title">Latest issue quick links</div>
+              <div class="quicklinks-grid">
+                <a href="${escapeHtml(leadRadarHref)}">Radar</a>
+                <a href="${escapeHtml(leadSatelliteHref)}">Satellite</a>
+                <a href="${escapeHtml(leadNwpHref)}">Numerical Weather Prediction</a>
+              </div>
             </div>
             <div class="meta-strip">
               <span>Date: ${escapeHtml(latest.displayDate || latest.date || '')}</span>
@@ -520,11 +574,12 @@
         `;
 
         const grid = document.getElementById('issue-grid');
-        grid.innerHTML = issues.map(issue => {
+        grid.innerHTML = issues.map((issue, index) => {
           const title = issue.title || issue.titleCht || 'Science Weekly';
           const subtitle = issue.subtitle || issue.subtitleCht || '';
           const summary = issue.summary || issue.summaryCht || subtitle;
           const tags = (issue.tags && issue.tags.length ? issue.tags : (issue.tagsCht || []));
+          const statusLabel = index === 0 ? 'Latest Issue' : 'Previous Issue';
           return `
             <article class="issue-card">
               <div class="thumb" data-label="${escapeHtml(issue.thumbnailLabel || issue.thumbnailLabelCht || issue.displayDate || title)}">
@@ -540,7 +595,7 @@
               </div>
               <div>
                 <div class="kicker">${escapeHtml(issue.displayDate || issue.date || '')}</div>
-                <h3>${escapeHtml(title)}</h3>
+                <h3>${escapeHtml(title)}<span class="status-badge">${escapeHtml(statusLabel)}</span></h3>
                 <p class="summary">${escapeHtml(summary)}</p>
                 <div class="tags">${tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
                 <div class="linkset">

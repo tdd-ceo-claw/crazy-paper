@@ -18,6 +18,12 @@
       "enSelector": "./20260424/select_en.html",
       "homepageEn": "./index_en.html",
       "homepageCht": "./index_cht.html",
+      "radarEn": "./20260424/radar_try_en.html",
+      "satelliteEn": "./20260424/satellite_try_en.html",
+      "nwpEn": "./20260424/nwp_try_en.html",
+      "radarCht": "./20260424/radar_try_cht.html",
+      "satelliteCht": "./20260424/satellite_try_cht.html",
+      "nwpCht": "./20260424/nwp_try_cht.html",
       "tags": ["Radar", "Satellite", "NWP"],
       "tagsCht": ["雷達", "衛星", "數值天氣預報"]
     }
