@@ -24,8 +24,115 @@
       "radarCht": "./20260424/radar_try_cht.html",
       "satelliteCht": "./20260424/satellite_try_cht.html",
       "nwpCht": "./20260424/nwp_try_cht.html",
-      "tags": ["Radar", "Satellite", "NWP"],
-      "tagsCht": ["雷達", "衛星", "數值天氣預報"]
+      "tags": [
+        "Radar",
+        "Satellite",
+        "NWP"
+      ],
+      "tagsCht": [
+        "雷達",
+        "衛星",
+        "數值天氣預報"
+      ]
+    },
+    {
+      "date": "20260413_20260419",
+      "displayDate": "2026-04-13 to 2026-04-19",
+      "title": "Science Weekly",
+      "titleCht": "Science Weekly",
+      "subtitle": "Weekly digest for 2026-04-13 to 2026-04-19 covering radar, satellite, and numerical weather prediction.",
+      "subtitleCht": "2026-04-13 至 2026-04-19 的每週摘要，聚焦雷達、衛星與數值天氣預報。",
+      "summary": "A two-pane weekly issue covering selected radar, satellite, and NWP papers from the 2026-04-13 to 2026-04-19 window.",
+      "summaryCht": "以雙視窗方式整理 2026-04-13 至 2026-04-19 期間的雷達、衛星與數值天氣預報相關文章。",
+      "thumbnailLabel": "Vol. 20260413–20260419",
+      "thumbnailLabelCht": "20260413–20260419 期",
+      "path": "./20260413_20260419/",
+      "chtSelector": "./20260413_20260419/select_cht.html",
+      "enSelector": "./20260413_20260419/select_en.html",
+      "homepageEn": "./index_en.html",
+      "homepageCht": "./index_cht.html",
+      "radarEn": "./20260413_20260419/radar_try_en.html",
+      "radarCht": "./20260413_20260419/radar_try_cht.html",
+      "satelliteEn": "./20260413_20260419/satellite_try_en.html",
+      "satelliteCht": "./20260413_20260419/satellite_try_cht.html",
+      "nwpEn": "./20260413_20260419/nwp_try_en.html",
+      "nwpCht": "./20260413_20260419/nwp_try_cht.html",
+      "tags": [
+        "Radar",
+        "Satellite",
+        "NWP"
+      ],
+      "tagsCht": [
+        "雷達",
+        "衛星",
+        "數值天氣預報"
+      ]
+    },
+    {
+      "date": "20260406_20260412",
+      "displayDate": "2026-04-06 to 2026-04-12",
+      "title": "Science Weekly",
+      "titleCht": "Science Weekly",
+      "subtitle": "Weekly digest for 2026-04-06 to 2026-04-12 covering radar, satellite, and numerical weather prediction.",
+      "subtitleCht": "2026-04-06 至 2026-04-12 的每週摘要，聚焦雷達、衛星與數值天氣預報。",
+      "summary": "A two-pane weekly issue covering selected radar, satellite, and NWP papers from the 2026-04-06 to 2026-04-12 window.",
+      "summaryCht": "以雙視窗方式整理 2026-04-06 至 2026-04-12 期間的雷達、衛星與數值天氣預報相關文章。",
+      "thumbnailLabel": "Vol. 20260406–20260412",
+      "thumbnailLabelCht": "20260406–20260412 期",
+      "path": "./20260406_20260412/",
+      "chtSelector": "./20260406_20260412/select_cht.html",
+      "enSelector": "./20260406_20260412/select_en.html",
+      "homepageEn": "./index_en.html",
+      "homepageCht": "./index_cht.html",
+      "radarEn": "./20260406_20260412/radar_try_en.html",
+      "radarCht": "./20260406_20260412/radar_try_cht.html",
+      "satelliteEn": "./20260406_20260412/satellite_try_en.html",
+      "satelliteCht": "./20260406_20260412/satellite_try_cht.html",
+      "nwpEn": "./20260406_20260412/nwp_try_en.html",
+      "nwpCht": "./20260406_20260412/nwp_try_cht.html",
+      "tags": [
+        "Radar",
+        "Satellite",
+        "NWP"
+      ],
+      "tagsCht": [
+        "雷達",
+        "衛星",
+        "數值天氣預報"
+      ]
+    },
+    {
+      "date": "20260330_20260405",
+      "displayDate": "2026-03-30 to 2026-04-05",
+      "title": "Science Weekly",
+      "titleCht": "Science Weekly",
+      "subtitle": "Weekly digest for 2026-03-30 to 2026-04-05 covering radar, satellite, and numerical weather prediction.",
+      "subtitleCht": "2026-03-30 至 2026-04-05 的每週摘要，聚焦雷達、衛星與數值天氣預報。",
+      "summary": "A two-pane weekly issue covering selected radar, satellite, and NWP papers from the 2026-03-30 to 2026-04-05 window.",
+      "summaryCht": "以雙視窗方式整理 2026-03-30 至 2026-04-05 期間的雷達、衛星與數值天氣預報相關文章。",
+      "thumbnailLabel": "Vol. 20260330–20260405",
+      "thumbnailLabelCht": "20260330–20260405 期",
+      "path": "./20260330_20260405/",
+      "chtSelector": "./20260330_20260405/select_cht.html",
+      "enSelector": "./20260330_20260405/select_en.html",
+      "homepageEn": "./index_en.html",
+      "homepageCht": "./index_cht.html",
+      "radarEn": "./20260330_20260405/radar_try_en.html",
+      "radarCht": "./20260330_20260405/radar_try_cht.html",
+      "satelliteEn": "./20260330_20260405/satellite_try_en.html",
+      "satelliteCht": "./20260330_20260405/satellite_try_cht.html",
+      "nwpEn": "./20260330_20260405/nwp_try_en.html",
+      "nwpCht": "./20260330_20260405/nwp_try_cht.html",
+      "tags": [
+        "Radar",
+        "Satellite",
+        "NWP"
+      ],
+      "tagsCht": [
+        "雷達",
+        "衛星",
+        "數值天氣預報"
+      ]
     }
   ]
 }

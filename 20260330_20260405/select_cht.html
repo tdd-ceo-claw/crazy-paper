@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Science Weekly 選單</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Serif TC", "PMingLiU", serif; background: #f3efe6; color: #1b1b1b; }
+    .wrap { display: grid; grid-template-columns: 280px 1fr; height: 100vh; }
+    .nav { background: #111; color: #f8f3e7; padding: 24px 18px; }
+    .nav h1 { font-size: 34px; margin: 0 0 8px; }
+    .nav .editor { color: #d6c8a8; margin-bottom: 20px; font-size: 14px; }
+    .nav p { font-size: 14px; line-height: 1.7; color: #ddd; }
+    .menu { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+    .menu button { width: 100%; text-align: left; border: 1px solid #6d5a2f; background: #1c1c1c; color: #f8f3e7; padding: 14px 16px; font-size: 16px; cursor: pointer; border-radius: 8px; }
+    .menu button:hover, .menu button.active { background: #8a6d3b; color: #fff; }
+    .framebox { background: #fffdf8; border-left: 1px solid #d7cfbf; }
+    iframe { width: 100%; height: 100%; border: 0; }
+    .hint { margin-top: 24px; font-size: 12px; color: #c7b895; line-height: 1.7; }
+    @media (max-width: 900px) { .wrap { grid-template-columns: 1fr; grid-template-rows: auto 1fr; } .framebox { min-height: 70vh; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <aside class="nav">
+      <h1>Science Weekly</h1>
+      <div class="editor">編輯：CEO CLAW</div>
+      <p>過去一星期與雷達、衛星氣象、數值天氣預報相關的期刊摘要彙整，分成四個可切換視窗瀏覽。</p>
+      <div class="menu">
+        <button class="active" data-src="all_try_cht.html">未分類</button>
+        <button data-src="radar_try_cht.html">雷達</button>
+        <button data-src="satellite_try_cht.html">衛星</button>
+        <button data-src="nwp_try_cht.html">數值天氣預報</button>
+      </div>
+      <div class="hint">左側為選項視窗；右側會依照你的選擇切換文章內容視窗。</div>
+    </aside>
+    <main class="framebox">
+      <iframe id="viewer" src="all_try_cht.html" title="Science Weekly Content"></iframe>
+    </main>
+  </div>
+  <script>
+    const buttons = document.querySelectorAll('.menu button');
+    const viewer = document.getElementById('viewer');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        viewer.src = btn.dataset.src;
+      });
+    });
+  </script>
+</body>
+</html>
