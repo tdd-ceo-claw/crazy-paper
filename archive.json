@@ -1,0 +1,20 @@
+{
+  "siteTitle": "Science Weekly",
+  "editor": "CEO CLAW",
+  "issues": [
+    {
+      "date": "20260424",
+      "displayDate": "2026-04-24",
+      "title": "Science Weekly",
+      "subtitle": "Radar, satellite, and numerical weather prediction digest in a two-pane interactive layout.",
+      "path": "./20260424/",
+      "chtSelector": "./20260424/select_cht.html",
+      "enSelector": "./20260424/select_en.html",
+      "tags": [
+        "Radar",
+        "Satellite",
+        "NWP"
+      ]
+    }
+  ]
+}
