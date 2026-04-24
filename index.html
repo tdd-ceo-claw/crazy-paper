@@ -3,33 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>crazy-paper</title>
+  <title>Science Weekly Archive | crazy-paper</title>
   <style>
-    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #f4f1ea; color: #1b1b1b; }
-    .page { max-width: 900px; margin: 0 auto; padding: 48px 28px 64px; }
-    h1 { font-size: 48px; margin: 0 0 12px; }
-    p { line-height: 1.7; }
-    .bundle { background: #fffdf8; border: 1px solid #ddd4c2; border-radius: 14px; padding: 22px 24px; margin-top: 28px; }
-    .bundle h2 { margin-top: 0; }
-    .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
-    .links a { text-decoration: none; color: #fff; background: #111; padding: 10px 14px; border-radius: 999px; }
-    .links a.alt { background: #8a6d3b; }
+    :root {
+      --bg: #efe7d6;
+      --paper: #fffdf8;
+      --ink: #181818;
+      --muted: #5f5a50;
+      --line: #d8cfbd;
+      --accent: #8a6d3b;
+      --accent-dark: #5d451f;
+      --black: #111111;
+      --red: #a53a2f;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+    .page { max-width: 1280px; margin: 0 auto; padding: 24px 20px 64px; }
+    .topline { display: flex; justify-content: space-between; gap: 20px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+    .masthead { display: grid; grid-template-columns: 1.3fr .7fr; gap: 24px; align-items: end; padding: 24px 0 18px; border-bottom: 6px double var(--black); }
+    .brand h1 { font-size: clamp(48px, 8vw, 88px); line-height: .92; margin: 0; letter-spacing: -.03em; text-transform: uppercase; }
+    .brand p { margin: 10px 0 0; color: var(--muted); font-size: 17px; line-height: 1.7; max-width: 760px; }
+    .editorial { background: var(--paper); border: 1px solid var(--line); padding: 18px 20px; }
+    .editorial .label { color: var(--red); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+    .editorial h2 { margin: 0 0 8px; font-size: 24px; }
+    .editorial p { margin: 0; line-height: 1.7; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-top: 28px; }
+    .lead, .sidebar-card, .archive { background: var(--paper); border: 1px solid var(--line); }
+    .lead { padding: 24px; }
+    .kicker { color: var(--red); letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+    .lead h2 { font-size: 42px; line-height: 1.08; margin: 10px 0 14px; }
+    .lead p { color: var(--muted); line-height: 1.8; font-size: 17px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .actions a { text-decoration: none; border-radius: 999px; padding: 12px 16px; font-size: 14px; }
+    .actions a.primary { background: var(--black); color: #fff; }
+    .actions a.secondary { background: var(--accent); color: #fff; }
+    .sidebar { display: grid; gap: 18px; }
+    .sidebar-card { padding: 18px 18px 16px; }
+    .sidebar-card h3 { margin: 0 0 10px; font-size: 20px; }
+    .sidebar-card p, .sidebar-card li { margin: 0; line-height: 1.7; color: var(--muted); }
+    .sidebar-card ul { margin: 10px 0 0 18px; padding: 0; }
+    .archive { margin-top: 28px; padding: 22px 24px; }
+    .archive-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 18px; }
+    .archive-head h2 { margin: 0; font-size: 28px; }
+    .archive-head p { margin: 0; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 14px 10px; border-bottom: 1px solid #e8e0d0; vertical-align: top; }
+    th { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    td strong { display: block; font-size: 20px; margin-bottom: 4px; }
+    td p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .linkset { display: flex; flex-wrap: wrap; gap: 10px; }
+    .linkset a { text-decoration: none; color: var(--accent-dark); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+    .footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 980px) { .masthead, .grid { grid-template-columns: 1fr; } .archive-head { align-items: start; } }
   </style>
 </head>
 <body>
   <main class="page">
-    <h1>crazy-paper</h1>
-    <p>GitHub Pages entry for published bundles.</p>
+    <div class="topline">
+      <div>Science Weekly Archive</div>
+      <div>Editor: CEO CLAW</div>
+    </div>
 
-    <section class="bundle">
-      <h2>2026-04-24 Science Weekly</h2>
-      <p>Two-pane weekly science bundle with a selector on the left and content on the right.</p>
-      <div class="links">
-        <a href="20260424/">Open bundle</a>
-        <a class="alt" href="20260424/select_cht.html">中文選單</a>
-        <a class="alt" href="20260424/select_en.html">English selector</a>
+    <section class="masthead">
+      <div class="brand">
+        <h1>Science Weekly</h1>
+        <p>A newsroom-style archive for weekly research digests focused on radar, satellite meteorology, and numerical weather prediction. Each issue opens as a two-pane reading experience with category navigation on the left and article content on the right.</p>
       </div>
+      <aside class="editorial">
+        <div class="label">Front desk</div>
+        <h2>crazy-paper archive</h2>
+        <p>This homepage now works as a dated archive index, so future weekly bundles can be added as new rows without changing the navigation pattern.</p>
+      </aside>
     </section>
+
+    <section class="grid">
+      <article class="lead">
+        <div class="kicker">Latest edition</div>
+        <h2>2026-04-24 — two-pane weekly digest now live on GitHub Pages</h2>
+        <p>This issue bundles uncategorized highlights plus dedicated radar, satellite, and numerical weather prediction views. The default entry opens directly into the two-pane layout, giving you a selector window and a content window on the same page.</p>
+        <div class="actions">
+          <a class="primary" href="./20260424/">Open main issue page</a>
+          <a class="secondary" href="./20260424/select_cht.html">中文選單</a>
+          <a class="secondary" href="./20260424/select_en.html">English selector</a>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <section class="sidebar-card">
+          <h3>Reading sections</h3>
+          <ul>
+            <li>Uncategorized</li>
+            <li>Radar</li>
+            <li>Satellite</li>
+            <li>Numerical Weather Prediction</li>
+          </ul>
+        </section>
+        <section class="sidebar-card">
+          <h3>Publishing pattern</h3>
+          <p>Each weekly bundle lives in its own date folder using the <code>YYYYMMDD</code> format, making the archive easy to extend and simple to link from GitHub Pages.</p>
+        </section>
+      </aside>
+    </section>
+
+    <section class="archive">
+      <div class="archive-head">
+        <h2>Date Index</h2>
+        <p>Weekly bundles listed newest first.</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:18%">Date</th>
+            <th style="width:46%">Edition</th>
+            <th>Links</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-04-24</td>
+            <td>
+              <strong>Science Weekly</strong>
+              <p>Radar, satellite, and NWP digest in a two-pane interactive layout.</p>
+            </td>
+            <td>
+              <div class="linkset">
+                <a href="./20260424/">Main page</a>
+                <a href="./20260424/select_cht.html">中文</a>
+                <a href="./20260424/select_en.html">EN</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="footer">Next weeks can be appended as new dated rows here while keeping the same archive structure.</div>
   </main>
 </body>
 </html>
