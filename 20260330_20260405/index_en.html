@@ -3,99 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Science Weekly — 2026-04-05</title>
+  <title>Science Weekly | 2026-03-30 to 2026-04-05</title>
   <style>
-    body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f4f1ea; color: #1b1b1b; }
-    .page { max-width: 1100px; margin: 0 auto; background: #fffdf8; padding: 36px 42px 60px; }
-    .masthead { border-bottom: 4px solid #111; padding-bottom: 18px; margin-bottom: 28px; }
-    .kicker { text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; color: #555; }
-    h1 { font-size: 52px; margin: 8px 0 6px; line-height: 1; }
-    .subhead { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 15px; color: #444; }
-    .deck { margin-top: 16px; font-size: 18px; line-height: 1.8; max-width: 900px; }
-    .note { background: #f7f3e8; border-left: 4px solid #8a6d3b; padding: 12px 14px; margin: 22px 0 30px; font-size: 14px; line-height: 1.8; }
-    .journal { margin: 34px 0; }
-    .journal h2 { font-size: 28px; border-bottom: 1px solid #ccc; padding-bottom: 8px; margin-bottom: 14px; }
-    .article { background: #fcfbf7; border: 1px solid #e6dfcf; padding: 18px 18px 14px; margin: 14px 0; }
-    .article h3 { margin: 0 0 8px; font-size: 22px; line-height: 1.4; }
-    .article p { margin: 8px 0; line-height: 1.9; }
-    .bullets { margin: 10px 0 8px 18px; }
-    .bullets li { margin: 6px 0; line-height: 1.8; }
-    a { color: #0a4a7a; }
-    .footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid #ccc; color: #666; font-size: 13px; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #efe7d6; color: #161616; }
+    .shell { display: grid; grid-template-columns: 360px 1fr; min-height: 100vh; }
+    .sidebar { background: linear-gradient(180deg, #161616 0%, #222 100%); color: #f7f1e5; padding: 22px 20px 26px; }
+    .brand h1 { font-size: 42px; line-height: .95; margin: 8px 0 6px; text-transform: uppercase; }
+    .brand p { margin: 0; color: #ddd1ba; line-height: 1.8; font-size: 14px; }
+    .banner { background: rgba(255,255,255,.05); border: 1px solid #514530; padding: 14px; margin: 18px 0; }
+    .menu { display: grid; gap: 10px; }
+    .menu button { text-align: left; border: 1px solid #6d5a2f; background: #1d1d1d; color: #f8f3e7; padding: 14px 16px; font-size: 16px; cursor: pointer; }
+    .menu button.active, .menu button:hover { background: #8a6d3b; }
+    .main { background: #fffdf8; }
+    .headlinebar { padding: 18px 24px; border-bottom: 1px solid #d7cfbf; background: #fcfaf5; }
+    .headlinebar h2 { margin: 6px 0; }
+    iframe { width: 100%; height: calc(100vh - 120px); border: 0; }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="masthead">
-      <div class="kicker">Weekly research digest</div>
-      <h1>Science Weekly</h1>
-      <div class="subhead">
-        <div><strong>Editor:</strong> CEO CLAW</div>
-        <div><strong>Coverage window:</strong> 2026-03-30 to 2026-04-05 (Asia/Taipei reference)</div>
-        <div><strong>Date:</strong> 2026-04-05</div>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div>Science Weekly · 2026-03-30 to 2026-04-05</div>
+        <h1>Science Weekly</h1>
+        <p>Editor: CEO CLAW</p>
       </div>
-      <p class="deck">A weekly digest of recent papers tied to radar meteorology, satellite observing systems, and numerical weather prediction, using only accessible abstract-level information from the approved journal pool.</p>
-    </header>
-
-    <div class="note">This issue was compiled strictly from accessible abstract-level metadata, Crossref abstracts, DOI landing metadata, and publisher/search snippets from the provided journal list. Full-text interpretation was avoided.</div>
-
-    <section class="journal">
-      <h2>Monthly Weather Review (AMS)</h2>
-      <article class="article">
-        <h3>Characteristics of Layers of Enhanced Spectrum Width within Northeast United States Winter Precipitation Events</h3>
-        <p><strong>Why it matters:</strong> A radar-based climatology of enhanced Doppler spectrum width layers gives forecasters a clearer picture of shear and turbulence structures inside winter precipitation systems.</p>
-        <ul class="bullets"><li>Uses Ka-band scanning polarimetric radar observations from Long Island to document enhanced spectrum-width layers in winter storms.</li><li>Accessible abstract text says the study provides a first climatology of these layers from 2017 to 2020.</li><li>It is relevant to radar interpretation of internal storm structure during cold-season precipitation events.</li></ul>
-        <p><a href="https://doi.org/10.1175/MWR-D-25-0091.1">Article link</a></p>
-      </article>
-    </section>
-    <section class="journal">
-      <h2>Journal of Hydrometeorology (AMS)</h2>
-      <article class="article">
-        <h3>Deep Learning for Multisatellite Precipitation Retrievals: Impact of Tomorrow.io’s Microwave Sounders</h3>
-        <p><strong>Why it matters:</strong> Satellite precipitation retrieval remains crucial where radar coverage is sparse, and this paper directly targets that operational gap.</p>
-        <ul class="bullets"><li>The abstract describes a satellite-based precipitation retrieval approach designed for real-time or near-real-time monitoring.</li><li>It specifically tests the added value of Tomorrow.io microwave sounders within a multisatellite framework.</li><li>The work is well aligned with satellite meteorology and data-fusion applications for global precipitation monitoring.</li></ul>
-        <p><a href="https://doi.org/10.1175/JHM-D-25-0007.1">Article link</a></p>
-      </article>
-    </section>
-    <section class="journal">
-      <h2>Monthly Weather Review (AMS)</h2>
-      <article class="article">
-        <h3>Ensemble of Data Assimilation (EDA) Impact Studies in Support of NOAA’s Next-Generation Microwave-Sounding Missions</h3>
-        <p><strong>Why it matters:</strong> The paper links future observing systems to forecast skill, which is exactly where satellite design and NWP operations meet.</p>
-        <ul class="bullets"><li>Abstract-level information says the study uses an ensemble-of-data-assimilation framework within ECMWF forecasting experiments.</li><li>Its purpose is to estimate the forecast impact of future microwave sounding instruments planned by NOAA.</li><li>That makes it a clean NWP-plus-satellite-observing-systems article for this week’s bundle.</li></ul>
-        <p><a href="https://doi.org/10.1175/MWR-D-25-0255.1">Article link</a></p>
-      </article>
-    </section>
-    <section class="journal">
-      <h2>Weather and Forecasting (AMS)</h2>
-      <article class="article">
-        <h3>Meteorological Benefits and Operational Applications of S-Band, Rapid-Scanning, Dual-Polarization Radar for Hail-Producing Storms</h3>
-        <p><strong>Why it matters:</strong> Rapid-scan dual-polarization radar speaks directly to warning operations for fast-evolving hailstorms.</p>
-        <ul class="bullets"><li>The abstract states that traditional radar update cycles can miss rapidly evolving hailstorm processes.</li><li>This study evaluates the operational benefits of fast S-band dual-polarization scanning.</li><li>It is a strong radar-operations paper for severe convective monitoring.</li></ul>
-        <p><a href="https://doi.org/10.1175/WAF-D-25-0089.1">Article link</a></p>
-      </article>
-    </section>
-    <section class="journal">
-      <h2>Bulletin of the American Meteorological Society (AMS)</h2>
-      <article class="article">
-        <h3>The Primacy of Physical Simulation in the Age of AI: A Critique of ML for Weather Forecasting</h3>
-        <p><strong>Why it matters:</strong> Even without a new dataset or field campaign, this piece frames a live debate about whether AI can replace physics-based numerical forecasting.</p>
-        <ul class="bullets"><li>The abstract argues that machine-learning estimation should not be expected to supplant physics-based weather simulation.</li><li>It offers system-level context for readers comparing AI forecasting tools with traditional NWP.</li><li>That makes it a useful perspective item in the numerical weather prediction bucket.</li></ul>
-        <p><a href="https://doi.org/10.1175/BAMS-D-25-0214.1">Article link</a></p>
-      </article>
-    </section>
-    <section class="journal">
-      <h2>Journal of Atmospheric and Oceanic Technology (AMS)</h2>
-      <article class="article">
-        <h3>Improving NEXRAD Velocity Retrievals Using Multi-PRT Scans with Regression Processing</h3>
-        <p><strong>Why it matters:</strong> Velocity ambiguity is a classic operational radar problem, so improvements here have immediate value for weather surveillance.</p>
-        <ul class="bullets"><li>The abstract highlights range–velocity ambiguity as a key pulsed-Doppler radar data-quality issue.</li><li>The paper proposes multi-PRT scans with regression processing to improve unambiguous velocity retrieval.</li><li>This is directly relevant to long-range radar surveillance and severe-weather diagnosis.</li></ul>
-        <p><a href="https://doi.org/10.1175/JTECH-D-25-0059.1">Article link</a></p>
-      </article>
-    </section>
-    <footer class="footer">
-      <p>Compiled for internal research digestion. A selector-based browsing version is included in the same folder for quick switching across uncategorized, radar, satellite, and NWP views.</p>
-    </footer>
+      <section class="banner">
+        <strong>Lead Story</strong>
+        <p>Past-week digest for radar, satellite, and NWP papers scanned from the current workspace journal list, including the newly added MDPI Atmosphere and npj Climate and Atmospheric Science sources.</p>
+      </section>
+      <div class="menu">
+        <button class="active" data-src="all_try_en.html">Uncategorized</button>
+        <button data-src="radar_try_en.html">Radar</button>
+        <button data-src="satellite_try_en.html">Satellite</button>
+        <button data-src="nwp_try_en.html">Numerical Weather Prediction</button>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="headlinebar">
+        <div>Editor: CEO CLAW</div>
+        <h2>Radar · Satellite · Numerical Weather Prediction</h2>
+        <p>Abstract-level only; no strong same-window abstract match surfaced from the two newly added journals in this issue window.</p>
+      </div>
+      <iframe id="viewer" src="all_try_en.html"></iframe>
+    </main>
   </div>
+  <script>
+    const buttons = document.querySelectorAll('.menu button');
+    const viewer = document.getElementById('viewer');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      viewer.src = btn.dataset.src;
+    }));
+  </script>
 </body>
 </html>

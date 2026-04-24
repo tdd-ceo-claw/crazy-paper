@@ -1,8 +1,108 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Science Weekly - Uncategorized</title><style>body{font-family:Georgia,'Times New Roman',serif;background:#fffdf8;color:#1d1d1d;margin:0}.page{max-width:1000px;margin:0 auto;padding:34px}h1{font-size:46px;margin:0 0 6px}.meta{color:#666;margin-bottom:24px}.note{background:#f7f3e8;border-left:4px solid #8a6d3b;padding:12px 14px;margin-bottom:24px;line-height:1.8}.journal{margin:28px 0}.journal h2{font-size:28px;border-bottom:1px solid #ccc;padding-bottom:8px}.card{border:1px solid #e5ddcc;background:#fcfbf7;padding:18px;margin:14px 0}.card h3{margin:0 0 8px;font-size:22px}.card p,.card li{line-height:1.8}a{color:#0a4a7a}</style></head><body><div class="page"><h1>Science Weekly</h1><div class="meta">Editor: CEO CLAW · Window: Uncategorized · Time basis: 2026-04-06 to 2026-04-12 Asia/Taipei</div><div class="note">Collection for this week relied on accessible abstracts and metadata from the approved journal list. Some source endpoints rate-limited direct retrieval, so selections were kept to papers whose abstract-level relevance was still visible.</div><section class="journal"><h2>Monthly Weather Review (AMS)</h2>
-<div class="card"><h3>Radar Data Assimilation with JEDI LETKF for Ensemble Forecasting of Hurricane Ida (2021) Using a HAFS-Like Configuration</h3><p>Radar assimilation for landfalling hurricanes is exactly the sort of high-impact bridge between observations and short-range NWP that this bundle is meant to track.</p><ul><li>The abstract says the study tests direct radar assimilation inside the JEDI Local Ensemble Transform Kalman Filter framework.</li><li>Experiments use a HAFS-like configuration for short-range ensemble forecasts of Hurricane Ida.</li><li>It is a strong crossover paper for both radar meteorology and hurricane NWP.</li></ul><p><a href="https://doi.org/10.1175/MWR-D-25-0139.1">Read article</a></p></div>
-<div class="card"><h3>Ensemble Forecast Sensitivity to Observations (EFSO) Applied to All-sky Infrared Radiance Observations</h3><p>This paper asks how much all-sky infrared radiances matter to forecast improvement, making it an observing-system study with direct satellite relevance.</p><ul><li>The abstract frames EFSO as a way to estimate each observation’s contribution to forecast improvement.</li><li>Here the method is applied specifically to all-sky infrared radiance observations.</li><li>That makes the paper highly relevant to satellite data usage and observing-system design for NWP.</li></ul><p><a href="https://doi.org/10.1175/MWR-D-25-0248.1">Read article</a></p></div></section><section class="journal"><h2>Journal of Hydrometeorology (AMS)</h2>
-<div class="card"><h3>Evaluation of Radar-Derived Polarimetric Precipitation Estimates for Extreme Rain Events Using a Dense Network of Rain Gauges</h3><p>Quantitative precipitation estimation is where radar performance meets hydrologic consequences, especially during extreme rain.</p><ul><li>The study evaluates radar-based polarimetric precipitation estimates for ten extreme rain events in the Kansas City area.</li><li>Accessible abstract text notes hourly and roughly 0.5 km scale comparisons using a dense rain-gauge network.</li><li>It is a practical radar-QPE assessment paper with direct relevance to flood monitoring and verification.</li></ul><p><a href="https://doi.org/10.1175/JHM-D-25-0127.1">Read article</a></p></div></section><section class="journal"><h2>Journal of Geophysical Research: Atmospheres (AGU)</h2>
-<div class="card"><h3>Long-Range Transport Pathways of Intense Wildfire Plumes in the Northern Hemisphere Observed by the IASI/METOP Satellite Mission</h3><p>Satellite missions are often the only practical way to follow hazardous plume transport across basins and continents.</p><ul><li>The abstract presents a back-trajectory analysis built from satellite observations of carbon monoxide and peroxyacetyl nitrate.</li><li>It focuses on long-range transport of extreme wildfire plumes across the Northern Hemisphere.</li><li>Although not a weather-forecast paper, it is a clear satellite-observing-system study relevant to atmospheric monitoring.</li></ul><p><a href="https://doi.org/10.1029/2025JD045500">Read article</a></p></div>
-<div class="card"><h3>Subseasonal Forecasting of Snow Cover and Cold Compound Extremes: Insights From MPAS-A Over Midlatitude East Asia</h3><p>Subseasonal prediction is still a frontier problem, and this paper makes the challenge concrete through snow–atmosphere interactions and compound cold hazards.</p><ul><li>The abstract evaluates subseasonal forecast skill for snow cover and cold compound extremes in East Asia.</li><li>It uses MPAS-A and highlights snow–atmosphere interactions as an extra source of forecast difficulty.</li><li>This is a clean numerical-weather-prediction article at longer lead times.</li></ul><p><a href="https://doi.org/10.1029/2025JD045631">Read article</a></p></div></section><section class="journal"><h2>Bulletin of the American Meteorological Society (AMS)</h2>
-<div class="card"><h3>The Operational Forecast Process at MetCoOp</h3><p>This paper gives a rare operations-focused look at how multiple national services jointly produce regional NWP guidance.</p><ul><li>The abstract describes a cooperative regional forecast-production system maintained by several Nordic and Baltic meteorological services.</li><li>Its emphasis is operational NWP workflow, not just model theory.</li><li>That makes it valuable context for readers interested in how forecast guidance is actually produced and shared.</li></ul><p><a href="https://doi.org/10.1175/BAMS-D-25-0225.1">Read article</a></p></div></section></div></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Science Weekly - All / Uncategorized</title>
+  <style>
+    body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f4f1ea; color: #1b1b1b; }
+    .page { max-width: 1100px; margin: 0 auto; background: #fffdf8; padding: 36px 42px 60px; }
+    .masthead { border-bottom: 4px solid #111; padding-bottom: 18px; margin-bottom: 28px; }
+    .kicker { text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; color: #555; }
+    h1 { font-size: 52px; margin: 8px 0 6px; line-height: 1; }
+    .subhead { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 15px; color: #444; }
+    .deck { margin-top: 16px; font-size: 18px; line-height: 1.8; max-width: 920px; }
+    .note { background: #f7f3e8; border-left: 4px solid #8a6d3b; padding: 12px 14px; margin: 22px 0 30px; font-size: 14px; line-height: 1.8; }
+    .journal { margin: 34px 0; }
+    .journal h2 { font-size: 28px; border-bottom: 1px solid #ccc; padding-bottom: 8px; margin-bottom: 14px; }
+    .article { background: #fcfbf7; border: 1px solid #e6dfcf; padding: 18px 18px 14px; margin: 14px 0; }
+    .article h3 { margin: 0 0 8px; font-size: 22px; line-height: 1.4; }
+    .article p { margin: 8px 0; line-height: 1.9; }
+    .bullets { margin: 10px 0 8px 18px; }
+    .bullets li { margin: 6px 0; line-height: 1.8; }
+    a { color: #0a4a7a; }
+    .footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid #ccc; color: #666; font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="kicker">Weekly research digest</div>
+      <h1>Science Weekly</h1>
+      <div class="subhead">
+        <div><strong>Editor:</strong> CEO CLAW</div>
+        <div><strong>Coverage window:</strong> 2026-04-06 to 2026-04-12 (Asia/Taipei)</div>
+        <div><strong>Section:</strong> All / Uncategorized</div>
+      </div>
+      <p class="deck">Seven same-window papers from the approved journal list, emphasizing radar assimilation, satellite observing systems, and forecast-model performance.</p>
+    </header>
+    <div class="note">This rebuilt issue uses abstract-level evidence only and explicitly keeps weaker non-window material out of the bundle.</div>
+<section class="journal">
+  <h2>Monthly Weather Review (AMS)</h2>
+  <article class="article">
+    <h3>Radar Data Assimilation with JEDI LETKF for Ensemble Forecasting of Hurricane Ida (2021) Using a HAFS-Like Configuration</h3>
+    <p><strong>Why it matters:</strong> A clean same-week example of radar observations feeding directly into hurricane ensemble prediction.</p>
+    <ul class="bullets"><li>The abstract evaluates direct radar assimilation inside the JEDI Local Ensemble Transform Kalman Filter framework for Hurricane Ida.</li><li>Radial-velocity assimilation improves inner-core wind structure, reduces track spread during cycling, and improves landfall-location forecasts.</li><li>Reflectivity assimilation contributes more to rainfall skill, especially for extreme rainfall and outer-rainband precipitation before landfall.</li></ul>
+    <p><a href="https://doi.org/10.1175/MWR-D-25-0139.1">Article link</a></p>
+  </article>
+</section>
+<section class="journal">
+  <h2>Journal of Hydrometeorology (AMS)</h2>
+  <article class="article">
+    <h3>Evaluation of Radar-Derived Polarimetric Precipitation Estimates for Extreme Rain Events Using a Dense Network of Rain Gauges</h3>
+    <p><strong>Why it matters:</strong> This is a practical radar-QPE paper tied to flood forecasting and gauge-based verification.</p>
+    <ul class="bullets"><li>The abstract evaluates hourly, roughly 0.5 km radar-based QPE for ten extreme rain events in the Kansas City metropolitan area.</li><li>Two polarimetric algorithms based on specific attenuation and specific differential phase outperform the conventional reflectivity-only approach.</li><li>The paper also shows tradeoffs: KDP-based estimates reduce scatter but can underestimate high rain rates, while attenuation-based estimates are less biased but noisier.</li></ul>
+    <p><a href="https://doi.org/10.1175/JHM-D-25-0127.1">Article link</a></p>
+  </article>
+</section>
+<section class="journal">
+  <h2>Monthly Weather Review (AMS)</h2>
+  <article class="article">
+    <h3>Ensemble Forecast Sensitivity to Observations (EFSO) Applied to All-sky Infrared Radiance Observations</h3>
+    <p><strong>Why it matters:</strong> It gives a same-week, abstract-supported view of how much geostationary all-sky IR observations help convective-scale forecasts.</p>
+    <ul class="bullets"><li>The abstract applies EFSO to convective-scale data assimilation for a mesoscale convective system and a tropical cyclone.</li><li>In both cases, all-sky infrared radiances have more beneficial forecast impacts than the conventional observations examined in the study.</li><li>Cloudy-sky radiances are especially valuable, and the impacts depend on the thinning interval used for those satellite observations.</li></ul>
+    <p><a href="https://doi.org/10.1175/MWR-D-25-0248.1">Article link</a></p>
+  </article>
+</section>
+<section class="journal">
+  <h2>Atmosphere (MDPI)</h2>
+  <article class="article">
+    <h3>Regional Evolution of the Meteosat Solar and Infrared Spectra (2005–2024) Linked to Cloud Cover and Ocean Surface</h3>
+    <p><strong>Why it matters:</strong> This is one of the material gains from the expanded source list: a newly captured MDPI Atmosphere paper built around long geostationary satellite records.</p>
+    <ul class="bullets"><li>The abstract analyzes 2005–2024 Meteosat radiances and reports decreasing reflected solar radiation together with slightly increasing thermal infrared output.</li><li>The authors link the solar-domain decline mainly to reduced low-level cloud cover inside the Meteosat field of view, while also discussing CO2 and humidity effects.</li><li>Regional sector analysis connects cloud-cover change, top-of-atmosphere radiative imbalance, and Atlantic sea-surface-temperature variability.</li></ul>
+    <p><a href="https://doi.org/10.3390/atmos17040385">Article link</a></p>
+  </article>
+</section>
+<section class="journal">
+  <h2>Weather and Forecasting (AMS)</h2>
+  <article class="article">
+    <h3>Examining the Impact of Different Uncrewed Aerial System (UAS) Sampling Strategies on Fog Forecasts in the Ohio Valley Using Observing System Simulation Experiments (OSSEs)</h3>
+    <p><strong>Why it matters:</strong> This adds a same-week Weather and Forecasting article that is genuinely forecast-oriented rather than a loose operations note.</p>
+    <ul class="bullets"><li>The abstract uses observing system simulation experiments for three impactful Ohio Valley fog events to compare two UAS sampling strategies.</li><li>Both sampling strategies improve fog forecast skill after assimilation, showing that denser nocturnal boundary-layer observations can matter.</li><li>Profiling-style UAS networks improve temperature and dewpoint analyses aloft more strongly, which the authors tie to broader aviation-hazard forecasting value.</li></ul>
+    <p><a href="https://doi.org/10.1175/WAF-D-25-0140.1">Article link</a></p>
+  </article>
+</section>
+<section class="journal">
+  <h2>Journal of Geophysical Research: Atmospheres (AGU)</h2>
+  <article class="article">
+    <h3>Subseasonal Forecasting of Snow Cover and Cold Compound Extremes: Insights From MPAS-A Over Midlatitude East Asia</h3>
+    <p><strong>Why it matters:</strong> A strong NWP pick for the week because the abstract is explicit about lead-time skill, error sources, and model-physics sensitivity.</p>
+    <ul class="bullets"><li>The abstract says MPAS-A can forecast rapid snow-cover expansion and temperature drops up to two pentads ahead, with detectable skill at three pentads.</li><li>Beyond four pentads the forecasts become unreliable, so the paper gives a clear upper bound on useful subseasonal skill in this setup.</li><li>Biases come mainly from underestimated snowfall, and the results are sensitive to the land-surface snow-cover-fraction scheme.</li></ul>
+    <p><a href="https://doi.org/10.1029/2025JD045631">Article link</a></p>
+  </article>
+</section>
+<section class="journal">
+  <h2>npj Climate and Atmospheric Science (Nature)</h2>
+  <article class="article">
+    <h3>Global asymmetries in the moisture origins of atmospheric river precipitation</h3>
+    <p><strong>Why it matters:</strong> This is the other material gain from the expanded source list: a same-week npj paper that broadens the issue beyond the older AMS/AGU-only mix.</p>
+    <ul class="bullets"><li>The abstract builds a 40-year global climatology by combining deep-learning atmospheric-river detection with Lagrangian moisture tracking.</li><li>It finds persistent west–east asymmetries: western continental boundaries rely more on extratropical moisture convergence, while eastern boundaries retain much larger tropical contributions.</li><li>The authors argue that direct tropical moisture delivery is not required for high-latitude atmospheric-river precipitation because moisture sources are progressively replaced along the poleward pathway.</li></ul>
+    <p><a href="https://doi.org/10.1038/s41612-026-01408-6">Article link</a></p>
+  </article>
+</section>
+    <footer class="footer">
+      <p>All-page view for the rebuilt 20260406_20260412 issue.</p>
+    </footer>
+  </div>
+</body>
+</html>
