@@ -91,6 +91,12 @@
       padding: 22px 24px 26px;
       box-shadow: 0 8px 24px rgba(60, 40, 12, .05);
     }
+    .section.lead-section {
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid rgba(16,16,16,.18);
+      box-shadow: 0 20px 44px rgba(45, 30, 10, .14);
+    }
     .sectionhead {
       display: flex;
       justify-content: space-between;
@@ -115,9 +121,13 @@
     }
     .lead-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .9fr);
-      gap: 24px;
+      grid-template-columns: minmax(0, 1.45fr) minmax(320px, .85fr);
+      gap: 0;
       align-items: stretch;
+      background:
+        linear-gradient(135deg, rgba(16,16,16,.96) 0 57%, rgba(43,30,15,.96) 57% 100%),
+        linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0));
+      color: #f7f0df;
     }
     .lead-story .kicker,
     .issue-card .kicker {
@@ -126,16 +136,47 @@
       letter-spacing: .14em;
       text-transform: uppercase;
     }
+    .lead-story {
+      padding: 28px 28px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    .lead-story::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(216,188,119,.2), transparent 28%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 34px);
+      pointer-events: none;
+    }
+    .lead-story > * { position: relative; z-index: 1; }
+    .lead-story .kicker {
+      color: #f2c56d;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .lead-story .kicker::before,
+    .lead-story .kicker::after {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: rgba(242,197,109,.66);
+    }
     .lead-story h3 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.02;
-      margin: 10px 0 12px;
+      font-size: clamp(38px, 5.8vw, 74px);
+      line-height: .94;
+      margin: 14px 0 12px;
+      max-width: 11ch;
+      text-shadow: 0 3px 0 rgba(0,0,0,.14);
     }
     .lead-story p {
       margin: 0;
-      color: var(--muted);
-      line-height: 1.92;
+      color: rgba(247,240,223,.86);
+      line-height: 1.88;
       font-size: 18px;
+      max-width: 60ch;
     }
     .meta-strip {
       display: flex;
@@ -143,8 +184,8 @@
       flex-wrap: wrap;
       margin: 18px 0 0;
       padding-top: 14px;
-      border-top: 1px solid #ece4d4;
-      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.18);
+      color: rgba(247,240,223,.72);
       font-size: 13px;
       letter-spacing: .04em;
     }
@@ -161,23 +202,25 @@
       font-size: 14px;
       border: 1px solid transparent;
     }
-    .cta .primary { background: var(--black); color: #fff; }
-    .cta .secondary { background: #f8f0dd; color: var(--accent-dark); border-color: #dbcaa6; }
+    .cta .primary { background: #f3c76f; color: #20160c; font-weight: 700; }
+    .cta .secondary { background: rgba(255,255,255,.08); color: #f7f0df; border-color: rgba(255,255,255,.24); }
     .quick-links {
-      margin-top: 18px;
-      padding: 14px 16px;
-      border: 1px solid #dbcaa6;
-      background: #fbf5e8;
+      margin-top: 22px;
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(2px);
     }
     .quick-links h4 {
       margin: 0;
       font-size: 15px;
       letter-spacing: .08em;
       text-transform: uppercase;
+      color: #f4d38f;
     }
     .quick-links p {
       margin: 8px 0 0;
-      color: var(--muted);
+      color: rgba(247,240,223,.75);
       line-height: 1.75;
       font-size: 15px;
     }
@@ -192,16 +235,17 @@
       border-radius: 999px;
       padding: 10px 14px;
       font-size: 14px;
-      border: 1px solid #c8b388;
-      background: var(--paper);
-      color: var(--accent-dark);
+      border: 1px solid rgba(255,255,255,.24);
+      background: rgba(255,255,255,.12);
+      color: #fff6df;
     }
     .lead-panel {
-      border-left: 1px solid var(--line);
-      padding-left: 24px;
+      border-left: 1px solid rgba(255,255,255,.14);
+      padding: 28px 24px 28px;
       display: grid;
-      gap: 16px;
+      gap: 18px;
       align-content: start;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
     }
     .thumbnail-block {
       min-height: 240px;
@@ -419,6 +463,26 @@
       border-bottom: 1px solid var(--accent);
       font-size: 14px;
     }
+    .action-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .action-row a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      text-align: center;
+      padding: 10px 12px;
+      border: 1px solid #d9c79d;
+      background: #fbf5e8;
+      color: var(--accent-dark);
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
     .footer { margin-top: 22px; color: var(--muted); font-size: 13px; }
     @media (max-width: 980px) {
       .lead-layout,
@@ -427,9 +491,27 @@
       }
       .lead-panel {
         border-left: 0;
-        border-top: 1px solid var(--line);
-        padding-left: 0;
-        padding-top: 18px;
+        border-top: 1px solid rgba(255,255,255,.14);
+        padding-left: 24px;
+        padding-top: 22px;
+      }
+      .action-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .section.lead-section .sectionhead {
+        padding: 18px 18px 0;
+      }
+      .lead-story,
+      .lead-panel {
+        padding: 20px 18px 22px;
+      }
+      .lead-story h3 {
+        max-width: none;
+      }
+      .action-row {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -452,10 +534,10 @@
       </nav>
     </header>
 
-    <section class="section">
-      <div class="sectionhead">
-        <h2>Lead Story</h2>
-        <span>最新一期自動載入</span>
+    <section class="section lead-section">
+      <div class="sectionhead" style="padding: 20px 24px 14px; margin: 0; background: linear-gradient(180deg, #f8f1e1, #f2e3bf); border-bottom: 1px solid rgba(16,16,16,.1);">
+        <h2>最新一期</h2>
+        <span>頭版橫幅・自動載入</span>
       </div>
       <div class="lead-layout" id="lead-story">
         <article class="lead-story">
@@ -479,8 +561,8 @@
             <div class="thumb-label" id="lead-thumbnail-label">最新一期</div>
           </div>
           <div id="lead-side-copy">
-            <div class="kicker">Issue Desk</div>
-            <p style="margin:8px 0 0; color: var(--muted); line-height: 1.85;">首頁主打會自動指向 <code>archive.json</code> 中最新的一期，避免每次更新都要手動改寫頭條內容。</p>
+            <div class="kicker" style="color:#f2c56d;">Issue Desk</div>
+            <p style="margin:8px 0 0; color: rgba(247,240,223,.78); line-height: 1.85;">首頁主打會自動指向 <code style="color:#fff4d3;">archive.json</code> 中最新的一期，避免每次更新都要手動改寫頭條內容。</p>
           </div>
         </aside>
       </div>
@@ -541,24 +623,31 @@
         const leadRadarHref = latest.radarCht || `${latestBasePath}radar_try_cht.html`;
         const leadSatelliteHref = latest.satelliteCht || `${latestBasePath}satellite_try_cht.html`;
         const leadNwpHref = latest.nwpCht || `${latestBasePath}nwp_try_cht.html`;
+        const leadBadge = latest.displayDate || latest.date || 'Latest';
 
         leadStory.innerHTML = `
           <article class="lead-story">
-            <div class="kicker">Front Page Feature</div>
+            <div class="kicker">Front Page Banner</div>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:10px; color:rgba(247,240,223,.8);">
+              <span style="border:1px solid rgba(255,255,255,.2); padding:6px 10px; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">${escapeHtml(leadBadge)}</span>
+              <span style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#f2c56d;">Latest Edition</span>
+            </div>
             <h3>${escapeHtml((latest.displayDate || latest.date || '') + '｜' + leadTitle)}</h3>
             <p>${escapeHtml(leadSummary)}</p>
             <div class="cta">
-              <a class="primary" href="${escapeHtml(leadMainHref)}">開啟本期中文版</a>
-              <a class="secondary" href="${escapeHtml(leadEnHref)}">Open English Selector</a>
-              <a class="secondary" href="${escapeHtml(leadAltHref)}">進入期號主頁</a>
+              <a class="primary" href="${escapeHtml(leadMainHref)}">打開中文版</a>
+              <a class="secondary" href="${escapeHtml(leadEnHref)}">Open English</a>
+              <a class="secondary" href="${escapeHtml(leadAltHref)}">期號首頁</a>
             </div>
             <div class="quick-links">
-              <h4>本期快捷入口</h4>
-              <p>直接打開今天／最新一期的主題頁：</p>
+              <h4>頭版快捷入口</h4>
+              <p>一鍵直達本期中文、英文與主題頁。</p>
               <div class="quick-link-row">
+                <a href="${escapeHtml(leadMainHref)}">中文</a>
+                <a href="${escapeHtml(leadEnHref)}">English</a>
                 <a href="${escapeHtml(leadRadarHref)}">雷達</a>
                 <a href="${escapeHtml(leadSatelliteHref)}">衛星</a>
-                <a href="${escapeHtml(leadNwpHref)}">數值天氣預報</a>
+                <a href="${escapeHtml(leadNwpHref)}">NWP</a>
               </div>
             </div>
             <div class="meta-strip">
@@ -583,8 +672,8 @@
               <div class="thumb-label">${escapeHtml(latest.thumbnailLabelCht || latest.thumbnailLabel || latest.displayDate || 'Latest')}</div>
             </div>
             <div>
-              <div class="kicker">Issue Desk</div>
-              <p style="margin:8px 0 0; color: var(--muted); line-height: 1.85;">${escapeHtml(leadSubtitle || '最新一期已自動提升為首頁主打。')}</p>
+              <div class="kicker" style="color:#f2c56d;">Issue Desk</div>
+              <p style="margin:8px 0 0; color: rgba(247,240,223,.78); line-height: 1.85;">${escapeHtml(leadSubtitle || '最新一期已自動提升為首頁主打。')}</p>
             </div>
           </aside>
         `;
@@ -598,6 +687,12 @@
           const tags = (issue.tagsCht && issue.tagsCht.length ? issue.tagsCht : (issue.tags || []));
           const statusLabel = index === 0 ? '最新一期' : '往期';
           const statusClass = index === 0 ? 'issue-status latest' : 'issue-status';
+          const basePath = issue.path || './';
+          const issueChtHref = issue.chtSelector || basePath;
+          const issueEnHref = issue.enSelector || basePath;
+          const issueRadarHref = issue.radarCht || `${basePath}radar_try_cht.html`;
+          const issueSatelliteHref = issue.satelliteCht || `${basePath}satellite_try_cht.html`;
+          const issueNwpHref = issue.nwpCht || `${basePath}nwp_try_cht.html`;
           return `
             <article class="issue-card">
               <div class="thumb" data-label="${escapeHtml(issue.thumbnailLabelCht || issue.thumbnailLabel || issue.displayDate || title)}">
@@ -618,11 +713,18 @@
                 </div>
                 <h3>${escapeHtml(title)}</h3>
                 <p class="summary">${escapeHtml(summary)}</p>
+                <div class="action-row">
+                  <a href="${escapeHtml(issueChtHref)}">打開中文</a>
+                  <a href="${escapeHtml(issueEnHref)}">Open English</a>
+                  <a href="${escapeHtml(issueRadarHref)}">打開雷達</a>
+                  <a href="${escapeHtml(issueSatelliteHref)}">打開衛星</a>
+                  <a href="${escapeHtml(issueNwpHref)}">打開 NWP</a>
+                </div>
                 <div class="tags">${tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
                 <div class="linkset">
-                  <a href="${escapeHtml(issue.chtSelector || issue.path || './')}">中文選單</a>
-                  <a href="${escapeHtml(issue.enSelector || issue.path || './')}">English selector</a>
-                  <a href="${escapeHtml(issue.path || issue.chtSelector || './')}">期號主頁</a>
+                  <a href="${escapeHtml(issueChtHref)}">中文選單</a>
+                  <a href="${escapeHtml(issueEnHref)}">English selector</a>
+                  <a href="${escapeHtml(issue.path || issueChtHref || './')}">期號主頁</a>
                 </div>
               </div>
             </article>

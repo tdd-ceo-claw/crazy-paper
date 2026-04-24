@@ -115,7 +115,7 @@
     }
     .lead-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .9fr);
+      grid-template-columns: minmax(0, 1.55fr) minmax(320px, .85fr);
       gap: 24px;
       align-items: stretch;
     }
@@ -126,16 +126,94 @@
       letter-spacing: .14em;
       text-transform: uppercase;
     }
-    .lead-story h3 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.02;
-      margin: 10px 0 12px;
+    .lead-banner {
+      position: relative;
+      overflow: hidden;
+      padding: 26px 28px 24px;
+      border: 1px solid #b78d4a;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.48), transparent 34%),
+        linear-gradient(135deg, #fff7e7 0%, #f0dab0 45%, #fffaf1 100%);
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,.52), 0 14px 34px rgba(80, 45, 8, .12);
     }
-    .lead-story p {
-      margin: 0;
+    .lead-banner::before {
+      content: "Banner Feature";
+      position: absolute;
+      top: 16px;
+      right: -42px;
+      padding: 8px 52px;
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      transform: rotate(32deg);
+      box-shadow: 0 10px 24px rgba(159,59,47,.24);
+    }
+    .lead-banner::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(93,69,31,.12);
+      pointer-events: none;
+    }
+    .banner-topline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 3px double rgba(16,16,16,.8);
       color: var(--muted);
-      line-height: 1.92;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .banner-date {
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+    .banner-headline {
+      margin: 16px 0 0;
+      font-size: clamp(42px, 6.4vw, 78px);
+      line-height: .92;
+      letter-spacing: -.05em;
+      text-transform: uppercase;
+      max-width: 11ch;
+    }
+    .banner-deck {
+      margin: 14px 0 0;
+      max-width: 58ch;
+      color: #3d352b;
+      line-height: 1.82;
       font-size: 18px;
+    }
+    .banner-divider {
+      width: 132px;
+      height: 6px;
+      margin: 20px 0 16px;
+      background: linear-gradient(90deg, var(--black) 0 72%, var(--gold) 72% 100%);
+    }
+    .banner-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .banner-highlights div {
+      border-top: 1px solid rgba(16,16,16,.2);
+      padding-top: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .banner-highlights strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 11px;
     }
     .meta-strip {
       display: flex;
@@ -371,6 +449,28 @@
       border: 1px solid #e3d5b7;
       background: linear-gradient(180deg, #fffaf0, #f8eed7);
     }
+    .action-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .action-row a {
+      text-decoration: none;
+      text-align: center;
+      padding: 11px 10px;
+      border: 1px solid #caa869;
+      border-radius: 999px;
+      background: #fffdf8;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.2;
+      box-shadow: 0 4px 10px rgba(80, 45, 8, .05);
+    }
+    .action-row a:hover {
+      background: #f8efdb;
+    }
     .quicklinks-title {
       color: var(--red);
       font-size: 12px;
@@ -408,7 +508,8 @@
     .footer { margin-top: 22px; color: var(--muted); font-size: 13px; }
     @media (max-width: 980px) {
       .lead-layout,
-      .issue-card {
+      .issue-card,
+      .banner-highlights {
         grid-template-columns: 1fr;
       }
       .lead-panel {
@@ -416,6 +517,20 @@
         border-top: 1px solid var(--line);
         padding-left: 0;
         padding-top: 18px;
+      }
+      .action-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .lead-banner {
+        padding: 22px 18px 20px;
+      }
+      .banner-headline {
+        max-width: none;
+      }
+      .action-row {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -440,8 +555,8 @@
 
     <section class="section">
       <div class="sectionhead">
-        <h2>Lead Story</h2>
-        <span>Auto-promoted latest issue</span>
+        <h2>Latest Issue</h2>
+        <span>Auto-promoted front-page banner</span>
       </div>
       <div class="lead-layout" id="lead-story">
         <article class="lead-story">
@@ -519,35 +634,65 @@
         const leadSubtitle = latest.subtitle || latest.subtitleCht || '';
         const leadSummary = latest.summary || latest.summaryCht || leadSubtitle;
         const leadTags = (latest.tags && latest.tags.length ? latest.tags : (latest.tagsCht || []));
-        const leadMainHref = latest.enSelector || latest.path || './';
-        const leadChtHref = latest.chtSelector || './index_cht.html';
+        const issueLinks = issue => {
+          const issueBasePath = issue.path || './';
+          return {
+            openChinese: issue.chtSelector || `${issueBasePath}select_cht.html`,
+            openEnglish: issue.enSelector || `${issueBasePath}select_en.html`,
+            openRadar: issue.radarEn || `${issueBasePath}radar_try_en.html`,
+            openSatellite: issue.satelliteEn || `${issueBasePath}satellite_try_en.html`,
+            openNwp: issue.nwpEn || `${issueBasePath}nwp_try_en.html`
+          };
+        };
+
+        const latestLinks = issueLinks(latest);
+        const leadMainHref = latestLinks.openEnglish;
+        const leadChtHref = latestLinks.openChinese;
         const leadAltHref = latest.path || leadMainHref;
-        const issueBasePath = latest.path || './';
-        const leadRadarHref = latest.radarEn || `${issueBasePath}radar_try_en.html`;
-        const leadSatelliteHref = latest.satelliteEn || `${issueBasePath}satellite_try_en.html`;
-        const leadNwpHref = latest.nwpEn || `${issueBasePath}nwp_try_en.html`;
+        const leadRadarHref = latestLinks.openRadar;
+        const leadSatelliteHref = latestLinks.openSatellite;
+        const leadNwpHref = latestLinks.openNwp;
 
         leadStory.innerHTML = `
-          <article class="lead-story">
-            <div class="kicker">Front Page Feature</div>
-            <h3>${escapeHtml((latest.displayDate || latest.date || '') + ' | ' + leadTitle)}<span class="status-badge">Latest Issue</span></h3>
-            <p>${escapeHtml(leadSummary)}</p>
+          <article class="lead-story lead-banner">
+            <div class="banner-topline">
+              <span>Front Page Feature</span>
+              <span class="banner-date">${escapeHtml(latest.displayDate || latest.date || '')}</span>
+            </div>
+            <h3 class="banner-headline">${escapeHtml(leadTitle)}</h3>
+            <div class="banner-divider"></div>
+            <p class="banner-deck">${escapeHtml(leadSummary)}</p>
+            <div class="banner-highlights">
+              <div>
+                <strong>Edition</strong>
+                English landing page with bilingual issue switching.
+              </div>
+              <div>
+                <strong>Focus</strong>
+                ${escapeHtml(leadSubtitle || 'Weekly science digest')}
+              </div>
+              <div>
+                <strong>Status</strong>
+                Live archive banner for the newest issue.
+              </div>
+            </div>
             <div class="cta">
               <a class="primary" href="${escapeHtml(leadMainHref)}">Open English selector</a>
-              <a class="secondary" href="${escapeHtml(leadChtHref)}">開啟中文版選單</a>
+              <a class="secondary" href="${escapeHtml(leadChtHref)}">Open Chinese selector</a>
               <a class="secondary" href="${escapeHtml(leadAltHref)}">Open main issue page</a>
             </div>
             <div class="quicklinks">
               <div class="quicklinks-title">Latest issue quick links</div>
               <div class="quicklinks-grid">
-                <a href="${escapeHtml(leadRadarHref)}">Radar</a>
-                <a href="${escapeHtml(leadSatelliteHref)}">Satellite</a>
-                <a href="${escapeHtml(leadNwpHref)}">Numerical Weather Prediction</a>
+                <a href="${escapeHtml(leadRadarHref)}">Open Radar</a>
+                <a href="${escapeHtml(leadSatelliteHref)}">Open Satellite</a>
+                <a href="${escapeHtml(leadNwpHref)}">Open NWP</a>
               </div>
             </div>
             <div class="meta-strip">
               <span>Date: ${escapeHtml(latest.displayDate || latest.date || '')}</span>
               <span>Focus: ${escapeHtml(leadSubtitle || 'Weekly science digest')}</span>
+              <span>Edition: English</span>
             </div>
             <div class="tags">${leadTags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
           </article>
@@ -580,6 +725,7 @@
           const summary = issue.summary || issue.summaryCht || subtitle;
           const tags = (issue.tags && issue.tags.length ? issue.tags : (issue.tagsCht || []));
           const statusLabel = index === 0 ? 'Latest Issue' : 'Previous Issue';
+          const links = issueLinks(issue);
           return `
             <article class="issue-card">
               <div class="thumb" data-label="${escapeHtml(issue.thumbnailLabel || issue.thumbnailLabelCht || issue.displayDate || title)}">
@@ -598,6 +744,13 @@
                 <h3>${escapeHtml(title)}<span class="status-badge">${escapeHtml(statusLabel)}</span></h3>
                 <p class="summary">${escapeHtml(summary)}</p>
                 <div class="tags">${tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
+                <div class="action-row">
+                  <a href="${escapeHtml(links.openChinese)}">Open Chinese</a>
+                  <a href="${escapeHtml(links.openEnglish)}">Open English</a>
+                  <a href="${escapeHtml(links.openRadar)}">Open Radar</a>
+                  <a href="${escapeHtml(links.openSatellite)}">Open Satellite</a>
+                  <a href="${escapeHtml(links.openNwp)}">Open NWP</a>
+                </div>
                 <div class="linkset">
                   <a href="${escapeHtml(issue.enSelector || issue.path || './')}">English selector</a>
                   <a href="${escapeHtml(issue.chtSelector || issue.path || './')}">中文選單</a>
