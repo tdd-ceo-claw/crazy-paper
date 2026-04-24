@@ -2,235 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=./index_en.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Science Weekly Archive | crazy-paper</title>
+  <title>Redirecting to Science Weekly English Edition</title>
+  <script>
+    window.location.replace('./index_en.html');
+  </script>
   <style>
-    :root {
-      --bg: #efe7d6;
-      --paper: #fffdf8;
-      --ink: #181818;
-      --muted: #60584d;
-      --line: #d8cfbd;
-      --accent: #8a6d3b;
-      --accent-dark: #5d451f;
-      --black: #101010;
-      --red: #a53a2f;
-      --gold: #d1b36a;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #f4ead8;
+      color: #1d1812;
+      font-family: Georgia, "Times New Roman", serif;
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
-    a { color: inherit; }
-    .page { max-width: 1320px; margin: 0 auto; padding: 18px 18px 64px; }
-    .topline { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0 12px; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
-    .masthead { text-align: center; padding: 18px 0 12px; border-bottom: 8px double var(--black); }
-    .masthead .eyebrow { color: var(--red); letter-spacing: .18em; text-transform: uppercase; font-size: 12px; }
-    .masthead h1 { margin: 8px 0 6px; font-size: clamp(58px, 10vw, 104px); line-height: .9; letter-spacing: -.04em; text-transform: uppercase; }
-    .masthead p { max-width: 900px; margin: 0 auto; color: var(--muted); line-height: 1.8; font-size: 17px; }
-    .hero { display: grid; grid-template-columns: 1.45fr .9fr; gap: 24px; margin-top: 24px; }
-    .hero-main, .hero-side, .section, .briefs, .archive { background: var(--paper); border: 1px solid var(--line); }
-    .hero-main { padding: 24px 24px 26px; }
-    .hero-main .kicker { color: var(--red); text-transform: uppercase; letter-spacing: .13em; font-size: 12px; }
-    .hero-main h2 { font-size: 48px; line-height: 1.05; margin: 12px 0 14px; }
-    .hero-main p { color: var(--muted); line-height: 1.85; font-size: 18px; margin: 0; }
-    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
-    .cta a { text-decoration: none; border-radius: 999px; padding: 12px 16px; font-size: 14px; }
-    .cta .primary { background: var(--black); color: #fff; }
-    .cta .secondary { background: var(--accent); color: #fff; }
-    .hero-side { padding: 20px; display: grid; gap: 16px; }
-    .mini { border-bottom: 1px solid #ece4d4; padding-bottom: 14px; }
-    .mini:last-child { border-bottom: 0; padding-bottom: 0; }
-    .mini .label { color: var(--red); font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
-    .mini h3 { margin: 8px 0; font-size: 23px; }
-    .mini p { margin: 0; color: var(--muted); line-height: 1.8; }
-    .newsgrid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; margin-top: 24px; }
-    .section { padding: 22px 24px; }
-    .sectionhead { display: flex; justify-content: space-between; align-items: end; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 18px; }
-    .sectionhead h2 { margin: 0; font-size: 30px; }
-    .sectionhead span { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .1em; }
-    .story { display: grid; gap: 14px; }
-    .story article { padding-bottom: 14px; border-bottom: 1px solid #ece4d4; }
-    .story article:last-child { border-bottom: 0; padding-bottom: 0; }
-    .story h3 { margin: 0 0 6px; font-size: 25px; }
-    .story p { margin: 0; color: var(--muted); line-height: 1.85; }
-    .story .links { margin-top: 10px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .story .links a { text-decoration: none; color: var(--accent-dark); border-bottom: 1px solid var(--accent); }
-    .briefs { padding: 22px 24px; }
-    .briefs ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-    .briefs li { padding-bottom: 14px; border-bottom: 1px solid #ece4d4; }
-    .briefs li:last-child { border-bottom: 0; padding-bottom: 0; }
-    .briefs strong { display: block; margin-bottom: 6px; font-size: 18px; }
-    .briefs p { margin: 0; color: var(--muted); line-height: 1.8; }
-    .archive { margin-top: 24px; padding: 22px 24px; }
-    .archive table { width: 100%; border-collapse: collapse; }
-    .archive th, .archive td { text-align: left; padding: 14px 10px; border-bottom: 1px solid #ece4d4; vertical-align: top; }
-    .archive th { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-    .archive td strong { display: block; font-size: 20px; margin-bottom: 4px; }
-    .archive td p { margin: 0; color: var(--muted); line-height: 1.8; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-    .tag { border: 1px solid #d9c79d; color: var(--accent-dark); background: #fbf5e8; border-radius: 999px; padding: 4px 10px; font-size: 12px; }
-    .linkset { display: flex; flex-wrap: wrap; gap: 12px; }
-    .linkset a { text-decoration: none; color: var(--accent-dark); border-bottom: 1px solid var(--accent); }
-    .footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
-    @media (max-width: 1040px) { .hero, .newsgrid { grid-template-columns: 1fr; } }
+    .notice {
+      max-width: 560px;
+      padding: 24px 28px;
+      border: 1px solid #d6c8b1;
+      background: #fffdf7;
+      text-align: center;
+      line-height: 1.8;
+    }
+    a { color: #6f4e20; }
   </style>
 </head>
 <body>
-  <main class="page">
-    <div class="topline">
-      <div>Science Weekly Archive</div>
-      <div>Editor: CEO CLAW</div>
-      <div>GitHub Pages Edition</div>
-    </div>
-
-    <header class="masthead">
-      <div class="eyebrow">crazy-paper newsroom</div>
-      <h1>Science Weekly</h1>
-      <p>A newspaper-style landing page for weekly research bundles on radar, satellite meteorology, and numerical weather prediction. Each issue opens into a two-pane reading layout and the archive below is designed to grow week by week.</p>
-    </header>
-
-    <section class="hero">
-      <article class="hero-main">
-        <div class="kicker">Lead Story</div>
-        <h2>2026-04-24 issue anchors the new archive format with a two-pane science digest</h2>
-        <p>The latest bundle is presented as a navigable newsroom feature: a selector panel on the left, article content on the right, and dedicated category windows for uncategorized highlights, radar, satellite, and NWP coverage.</p>
-        <div class="cta">
-          <a class="primary" href="./20260424/">Open main issue page</a>
-          <a class="secondary" href="./20260424/select_cht.html">中文選單</a>
-          <a class="secondary" href="./20260424/select_en.html">English selector</a>
-        </div>
-      </article>
-
-      <aside class="hero-side">
-        <section class="mini">
-          <div class="label">Editors' note</div>
-          <h3>Archive-first publishing</h3>
-          <p>The homepage now behaves like a dated front page. Future issues can be appended without redesigning the site structure.</p>
-        </section>
-        <section class="mini">
-          <div class="label">Inside this issue</div>
-          <p>Four thematic windows plus an uncategorized overview keep the reporting flexible while preserving a single-entry reading experience.</p>
-        </section>
-        <section class="mini">
-          <div class="label">Desk priorities</div>
-          <p>Radar intelligence, satellite interpretation, and operational NWP remain the editorial spine of the archive.</p>
-        </section>
-      </aside>
-    </section>
-
-    <section class="newsgrid">
-      <section class="section">
-        <div class="sectionhead">
-          <h2>Front Page Highlights</h2>
-          <span>Latest coverage</span>
-        </div>
-        <div class="story">
-          <article>
-            <h3>Two-pane bundle design is now the default issue format</h3>
-            <p>The 2026-04-24 package opens directly into a split view designed for fast browsing and continuous reading, replacing the need for separate manual navigation pages.</p>
-            <div class="links">
-              <a href="./20260424/">Open issue</a>
-              <a href="./20260424/select_cht.html">Chinese selector</a>
-              <a href="./20260424/select_en.html">English selector</a>
-            </div>
-          </article>
-          <article>
-            <h3>Date-based folders now support a growing weekly archive</h3>
-            <p>Each edition is stored under its own <code>YYYYMMDD</code> folder, making publication, maintenance, and long-term browsing much cleaner as the archive expands.</p>
-          </article>
-          <article>
-            <h3>Homepage upgraded toward a real newspaper front page</h3>
-            <p>Lead story framing, briefs, sidebars, and an issue table now make the landing page feel more like a publication rather than a plain file list.</p>
-          </article>
-        </div>
-      </section>
-
-      <aside class="briefs">
-        <div class="sectionhead">
-          <h2>News Briefs</h2>
-          <span>At a glance</span>
-        </div>
-        <ul>
-          <li>
-            <strong>Categories</strong>
-            <p>Uncategorized, Radar, Satellite, and Numerical Weather Prediction remain the standing issue sections.</p>
-          </li>
-          <li>
-            <strong>Publishing model</strong>
-            <p>Archive metadata is now separated into <code>archive.json</code>, making future automation easier.</p>
-          </li>
-          <li>
-            <strong>Maintenance hook</strong>
-            <p><code>update_archive.js</code> can rebuild the date index from folder names when new weekly bundles are added.</p>
-          </li>
-        </ul>
-      </aside>
-    </section>
-
-    <section class="archive">
-      <div class="sectionhead">
-        <h2>Date Index</h2>
-        <span>Newest first</span>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th style="width:18%">Date</th>
-            <th style="width:47%">Edition</th>
-            <th>Links</th>
-          </tr>
-        </thead>
-        <tbody id="issue-table-body">
-          <tr>
-            <td>2026-04-24</td>
-            <td>
-              <strong>Science Weekly</strong>
-              <p>Radar, satellite, and numerical weather prediction digest in a two-pane interactive layout.</p>
-              <div class="tags">
-                <span class="tag">Radar</span>
-                <span class="tag">Satellite</span>
-                <span class="tag">NWP</span>
-              </div>
-            </td>
-            <td>
-              <div class="linkset">
-                <a href="./20260424/">Main page</a>
-                <a href="./20260424/select_cht.html">中文</a>
-                <a href="./20260424/select_en.html">EN</a>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <div class="footer">This front page is ready to accumulate future weekly issues. Add a new date folder, run <code>node update_archive.js</code>, and update or regenerate the homepage as needed.</div>
-  </main>
-
-  <script>
-    fetch('./archive.json')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        if (!data || !Array.isArray(data.issues) || !data.issues.length) return;
-        const body = document.getElementById('issue-table-body');
-        body.innerHTML = data.issues.map(issue => `
-          <tr>
-            <td>${issue.displayDate || issue.date}</td>
-            <td>
-              <strong>${issue.title || 'Science Weekly'}</strong>
-              <p>${issue.subtitle || ''}</p>
-              <div class="tags">${(issue.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
-            </td>
-            <td>
-              <div class="linkset">
-                <a href="${issue.path}">Main page</a>
-                <a href="${issue.chtSelector}">中文</a>
-                <a href="${issue.enSelector}">EN</a>
-              </div>
-            </td>
-          </tr>
-        `).join('');
-      })
-      .catch(() => {});
-  </script>
+  <div class="notice">
+    <h1>Redirecting…</h1>
+    <p>You are being sent to the English homepage for the Science Weekly archive.</p>
+    <p><a href="./index_en.html">Open index_en.html manually</a></p>
+  </div>
 </body>
 </html>

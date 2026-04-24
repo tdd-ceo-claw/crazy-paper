@@ -6,15 +6,20 @@
       "date": "20260424",
       "displayDate": "2026-04-24",
       "title": "Science Weekly",
+      "titleCht": "Science Weekly",
       "subtitle": "Radar, satellite, and numerical weather prediction digest in a two-pane interactive layout.",
+      "subtitleCht": "聚焦雷達、衛星與數值天氣預報的雙視窗互動式週報。",
+      "summary": "A two-pane weekly issue with uncategorized, radar, satellite, and NWP windows for fast research browsing.",
+      "summaryCht": "以未分類、雷達、衛星與數值天氣預報四個視窗組成的雙欄互動式研究週報。",
+      "thumbnailLabel": "Vol. 20260424",
+      "thumbnailLabelCht": "第 20260424 期",
       "path": "./20260424/",
       "chtSelector": "./20260424/select_cht.html",
       "enSelector": "./20260424/select_en.html",
-      "tags": [
-        "Radar",
-        "Satellite",
-        "NWP"
-      ]
+      "homepageEn": "./index_en.html",
+      "homepageCht": "./index_cht.html",
+      "tags": ["Radar", "Satellite", "NWP"],
+      "tagsCht": ["雷達", "衛星", "數值天氣預報"]
     }
   ]
 }
