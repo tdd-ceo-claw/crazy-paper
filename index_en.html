@@ -448,6 +448,29 @@
       font-size: 22px;
       line-height: 1;
     }
+     .comment-icons span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid #d8cfbd;
+      background: #fbf5e8;
+    }
++    .title-row {
++      display: flex;
++      align-items: center;
++      justify-content: space-between;
++      gap: 14px;
++      flex-wrap: wrap;
++    }
++    .title-row h3 {
++      margin: 8px 0 8px;
++    }
++    .title-row .comment-icons {
++      margin-top: 0;
++      flex-wrap: nowrap;
++    }
     .comment-icons span {
       display: inline-flex;
       align-items: center;
@@ -703,6 +726,14 @@
         const leadSubtitle = latest.subtitle || latest.subtitleCht || '';
         const leadSummary = latest.summary || latest.summaryCht || leadSubtitle;
         const leadComment = latest.commentEn || leadSubtitle || 'A brief editorial note for this issue will appear here.';
+        const iconSets = [
+          ['⛅','🌦️','📡'],
+          ['🌤️','🌧️','🛰️'],
+          ['🌩️','🌪️','📡'],
+          ['☀️','🌥️','🛰️'],
+          ['🌫️','🌦️','📍']
+        ];
+
         const issueLinks = issue => {
           const issueBasePath = issue.path || './';
           return {
@@ -795,6 +826,7 @@
           const comment = issue.commentEn || subtitle || '';
           const statusLabel = index === 0 ? 'Latest Issue' : 'Previous Issue';
           const links = issueLinks(issue);
+          const icons = iconSets[index % iconSets.length];
           return `
             <article class="issue-card">
               <div class="thumb" data-label="${escapeHtml(issue.thumbnailLabel || issue.thumbnailLabelCht || issue.displayDate || title)}">
@@ -810,9 +842,12 @@
               </div>
               <div>
                 <div class="kicker">${escapeHtml(issue.displayDate || issue.date || '')}</div>
-                <h3>${escapeHtml(title)}<span class="status-badge">${escapeHtml(statusLabel)}</span></h3>
+                <div class="title-row">
+                  <h3>${escapeHtml(title)}<span class="status-badge">${escapeHtml(statusLabel)}</span></h3>
+                  <div class="comment-icons" aria-label="weather-themed icons"><span>${icons[0]}</span><span>${icons[1]}</span><span>${icons[2]}</span></div>
+                </div>
                 <p class="summary">${escapeHtml(summary)}</p>
-                <div class="issue-comment">${escapeHtml(comment)}<div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌦️</span><span>📡</span></div></div>
+                <div class="issue-comment">${escapeHtml(comment)}</div>
                 <div class="action-row" style="grid-template-columns: repeat(6, minmax(0, 1fr));">
                   <a href="${escapeHtml(links.openChinese)}">Chinese</a>
                   <a href="${escapeHtml(links.openEnglish)}">English</a>

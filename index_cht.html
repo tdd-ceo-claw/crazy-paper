@@ -473,6 +473,30 @@
       font-size: 22px;
       line-height: 1;
     }
+     .comment-icons span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.06);
+      color: #fff6df;
+    }
++    .title-row {
++      display: flex;
++      align-items: center;
++      justify-content: space-between;
++      gap: 14px;
++      flex-wrap: wrap;
++    }
++    .title-row h3 {
++      margin: 8px 0 8px;
++    }
++    .title-row .comment-icons {
++      margin-top: 0;
++      flex-wrap: nowrap;
++    }
     .comment-icons span {
       display: inline-flex;
       align-items: center;
@@ -652,6 +676,13 @@
 
         const issues = [...data.issues].sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
         const latest = issues[0];
+        const iconSets = [
+          ['⛅','🌦️','📡'],
+          ['🌤️','🌧️','🛰️'],
+          ['🌩️','🌪️','📡'],
+          ['☀️','🌥️','🛰️'],
+          ['🌫️','🌦️','📍']
+        ];
 
         const leadStory = document.getElementById('lead-story');
         const leadLabel = document.getElementById('lead-thumbnail-label');
@@ -733,6 +764,7 @@
           const issueSatelliteHref = issue.satelliteCht || `${basePath}satellite_try_cht.html`;
           const issueNwpHref = issue.nwpCht || `${basePath}nwp_try_cht.html`;
           const issueAiHref = issue.aiCht || `${basePath}ai_try_cht.html`;
+          const icons = iconSets[index % iconSets.length];
           return `
             <article class="issue-card">
               <div class="thumb" data-label="${escapeHtml(issue.thumbnailLabelCht || issue.thumbnailLabel || issue.displayDate || title)}">
@@ -751,9 +783,12 @@
                   <div class="kicker">${escapeHtml(issue.displayDate || issue.date || '')}</div>
                   <span class="${statusClass}">${statusLabel}</span>
                 </div>
-                <h3>${escapeHtml(title)}</h3>
+                <div class="title-row">
+                  <h3>${escapeHtml(title)}</h3>
+                  <div class="comment-icons" aria-label="weather-themed icons"><span>${icons[0]}</span><span>${icons[1]}</span><span>${icons[2]}</span></div>
+                </div>
                 <p class="summary">${escapeHtml(summary)}</p>
-                <div class="issue-comment">${escapeHtml(comment)}<div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌦️</span><span>📡</span></div></div>
+                <div class="issue-comment">${escapeHtml(comment)}</div>
                 <div class="action-row">
                   <a href="${escapeHtml(issueChtHref)}">中文</a>
                   <a href="${escapeHtml(issueEnHref)}">English</a>
