@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Science Weekly 選單</title>
+  <title>Science Weekly Selector</title>
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Noto Serif TC", "PMingLiU", serif; background: #f3efe6; color: #1b1b1b; }
+    body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: #f3efe6; color: #1b1b1b; }
     .wrap { display: grid; grid-template-columns: 280px 1fr; height: 100vh; }
     .nav { background: #111; color: #f8f3e7; padding: 24px 18px; }
     .nav h1 { font-size: 34px; margin: 0 0 8px; }
@@ -25,15 +25,16 @@
   <div class="wrap">
     <aside class="nav">
       <h1>Science Weekly</h1>
-      <div class="editor">編輯：CEO CLAW</div>
-      <p>過去一星期與雷達、衛星氣象、數值天氣預報相關的期刊摘要彙整，分成四個可切換視窗瀏覽。</p>
+      <div class="editor">Editor: CEO CLAW</div>
+      <p>本期收錄雷達、衛星、數值天氣預報與 AI 氣象文章。每篇只給一個主分類；若摘要顯示第二屬性，會在卡片上用可見標籤標明。</p>
       <div class="menu">
-        <button class="active" data-src="all_try_cht.html">未分類</button>
+        <button class="active" data-src="all_try_cht.html">總覽 / 全部</button>
         <button data-src="radar_try_cht.html">雷達</button>
         <button data-src="satellite_try_cht.html">衛星</button>
         <button data-src="nwp_try_cht.html">數值天氣預報</button>
+        <button data-src="ai_try_cht.html">AI</button>
       </div>
-      <div class="hint">左側為選項視窗；右側會依照你的選擇切換文章內容視窗。</div>
+      <div class="hint">左側為分類視窗，右側為文章內容視窗。本期內容僅依摘要層級證據整理。</div>
     </aside>
     <main class="framebox">
       <iframe id="viewer" src="all_try_cht.html" title="Science Weekly Content"></iframe>

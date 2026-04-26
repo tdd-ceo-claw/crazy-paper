@@ -3,59 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Science Weekly | 2026-03-30 to 2026-04-05</title>
+  <title>Science Weekly · 2026-03-30 to 2026-04-05</title>
   <style>
-    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #efe7d6; color: #161616; }
-    .shell { display: grid; grid-template-columns: 360px 1fr; min-height: 100vh; }
-    .sidebar { background: linear-gradient(180deg, #161616 0%, #222 100%); color: #f7f1e5; padding: 22px 20px 26px; }
-    .brand h1 { font-size: 42px; line-height: .95; margin: 8px 0 6px; text-transform: uppercase; }
-    .brand p { margin: 0; color: #ddd1ba; line-height: 1.8; font-size: 14px; }
-    .banner { background: rgba(255,255,255,.05); border: 1px solid #514530; padding: 14px; margin: 18px 0; }
-    .menu { display: grid; gap: 10px; }
-    .menu button { text-align: left; border: 1px solid #6d5a2f; background: #1d1d1d; color: #f8f3e7; padding: 14px 16px; font-size: 16px; cursor: pointer; }
-    .menu button.active, .menu button:hover { background: #8a6d3b; }
-    .main { background: #fffdf8; }
-    .headlinebar { padding: 18px 24px; border-bottom: 1px solid #d7cfbf; background: #fcfaf5; }
-    .headlinebar h2 { margin: 6px 0; }
-    iframe { width: 100%; height: calc(100vh - 120px); border: 0; }
+    body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: #f3efe6; color: #161616; }
+    .hero { max-width: 1100px; margin: 0 auto; padding: 52px 28px 36px; }
+    .eyebrow { letter-spacing: 0.12em; text-transform: uppercase; color: #8a6d3b; font-size: 13px; }
+    h1 { font-size: 58px; margin: 10px 0 12px; }
+    .sub { font-size: 22px; max-width: 760px; line-height: 1.6; }
+    .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; margin-top: 28px; }
+    .card { background: #fffdf8; border: 1px solid #e3dac8; border-radius: 16px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.05); }
+    .card h2 { margin-top: 0; }
+    .links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .links a { text-decoration: none; background: #111; color: #f7f0df; padding: 14px 16px; border-radius: 10px; display: block; }
+    .tags span { display:inline-block; margin:0 8px 8px 0; padding:6px 10px; border-radius:999px; background:#eadcc0; color:#5f4316; font-size:13px; font-weight:700; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } h1{font-size:44px;} }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <div>Science Weekly · 2026-03-30 to 2026-04-05</div>
-        <h1>Science Weekly</h1>
-        <p>Editor: CEO CLAW</p>
+  <section class="hero">
+    <div class="eyebrow">Science Weekly · CEO CLAW</div>
+    <h1>2026-03-30 to 2026-04-05</h1>
+    <div class="sub">A refreshed bilingual issue covering radar, satellite meteorology, numerical weather prediction, and a new AI bucket, all rebuilt from abstract-level evidence tied to the current workspace journal list.</div>
+    <div class="grid">
+      <div class="card">
+        <h2>Lead note</h2>
+        <p>This issue keeps a single primary category per paper. When a paper clearly spans two professional identities—such as satellite plus AI or NWP plus satellite—the secondary identity is shown directly in the article card instead of duplicating the paper across buckets.</p>
+        <div class="tags"><span>Radar</span><span>Satellite</span><span>NWP</span><span>AI</span></div>
       </div>
-      <section class="banner">
-        <strong>Lead Story</strong>
-        <p>Past-week digest for radar, satellite, and NWP papers scanned from the current workspace journal list, including the newly added MDPI Atmosphere and npj Climate and Atmospheric Science sources.</p>
-      </section>
-      <div class="menu">
-        <button class="active" data-src="all_try_en.html">Uncategorized</button>
-        <button data-src="radar_try_en.html">Radar</button>
-        <button data-src="satellite_try_en.html">Satellite</button>
-        <button data-src="nwp_try_en.html">Numerical Weather Prediction</button>
+      <div class="card">
+        <h2>Browse the issue</h2>
+        <div class="links">
+          <a href="select_cht.html">中文選頁</a>
+          <a href="select_en.html">English selector</a>
+          <a href="all_try_en.html">All / Overview</a>
+          <a href="ai_try_en.html">AI</a>
+          <a href="radar_try_en.html">Radar</a>
+          <a href="satellite_try_en.html">Satellite</a>
+          <a href="nwp_try_en.html">NWP</a>
+          <a href="all_try_cht.html">總覽（中文）</a>
+        </div>
       </div>
-    </aside>
-    <main class="main">
-      <div class="headlinebar">
-        <div>Editor: CEO CLAW</div>
-        <h2>Radar · Satellite · Numerical Weather Prediction</h2>
-        <p>Abstract-level only; no strong same-window abstract match surfaced from the two newly added journals in this issue window.</p>
-      </div>
-      <iframe id="viewer" src="all_try_en.html"></iframe>
-    </main>
-  </div>
-  <script>
-    const buttons = document.querySelectorAll('.menu button');
-    const viewer = document.getElementById('viewer');
-    buttons.forEach(btn => btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      viewer.src = btn.dataset.src;
-    }));
-  </script>
+    </div>
+  </section>
 </body>
 </html>

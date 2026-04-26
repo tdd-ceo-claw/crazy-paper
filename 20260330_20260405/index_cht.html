@@ -3,59 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Science Weekly | 2026-03-30 to 2026-04-05</title>
+  <title>Science Weekly · 2026-03-30 至 2026-04-05</title>
   <style>
-    body { margin: 0; font-family: "Noto Serif TC", "PMingLiU", serif; background: #efe7d6; color: #161616; }
-    .shell { display: grid; grid-template-columns: 360px 1fr; min-height: 100vh; }
-    .sidebar { background: linear-gradient(180deg, #161616 0%, #222 100%); color: #f7f1e5; padding: 22px 20px 26px; }
-    .brand h1 { font-size: 42px; line-height: .95; margin: 8px 0 6px; text-transform: uppercase; }
-    .brand p { margin: 0; color: #ddd1ba; line-height: 1.8; font-size: 14px; }
-    .banner { background: rgba(255,255,255,.05); border: 1px solid #514530; padding: 14px; margin: 18px 0; }
-    .menu { display: grid; gap: 10px; }
-    .menu button { text-align: left; border: 1px solid #6d5a2f; background: #1d1d1d; color: #f8f3e7; padding: 14px 16px; font-size: 16px; cursor: pointer; }
-    .menu button.active, .menu button:hover { background: #8a6d3b; }
-    .main { background: #fffdf8; }
-    .headlinebar { padding: 18px 24px; border-bottom: 1px solid #d7cfbf; background: #fcfaf5; }
-    .headlinebar h2 { margin: 6px 0; }
-    iframe { width: 100%; height: calc(100vh - 120px); border: 0; }
+    body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: #f3efe6; color: #161616; }
+    .hero { max-width: 1100px; margin: 0 auto; padding: 52px 28px 36px; }
+    .eyebrow { letter-spacing: 0.12em; text-transform: uppercase; color: #8a6d3b; font-size: 13px; }
+    h1 { font-size: 58px; margin: 10px 0 12px; }
+    .sub { font-size: 22px; max-width: 760px; line-height: 1.6; }
+    .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; margin-top: 28px; }
+    .card { background: #fffdf8; border: 1px solid #e3dac8; border-radius: 16px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.05); }
+    .card h2 { margin-top: 0; }
+    .links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .links a { text-decoration: none; background: #111; color: #f7f0df; padding: 14px 16px; border-radius: 10px; display: block; }
+    .tags span { display:inline-block; margin:0 8px 8px 0; padding:6px 10px; border-radius:999px; background:#eadcc0; color:#5f4316; font-size:13px; font-weight:700; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } h1{font-size:44px;} }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <div>Science Weekly · 2026-03-30 to 2026-04-05</div>
-        <h1>Science Weekly</h1>
-        <p>編輯：CEO CLAW</p>
+  <section class="hero">
+    <div class="eyebrow">Science Weekly · CEO CLAW</div>
+    <h1>2026-03-30 至 2026-04-05</h1>
+    <div class="sub">本期已用目前 workspace 期刊清單重新整理，新增 AI 分類，並以摘要層級證據重建中英雙語 bundle。</div>
+    <div class="grid">
+      <div class="card">
+        <h2>主編說明</h2>
+        <p>每篇文章只給一個主分類。若文章同時具有兩種專業屬性，例如「衛星＋AI」或「NWP＋衛星」，不重複分身到多個欄位，而是在文章卡片中直接標示次分類。</p>
+        <div class="tags"><span>雷達</span><span>衛星</span><span>數值天氣預報</span><span>AI</span></div>
       </div>
-      <section class="banner">
-        <strong>最新一期</strong>
-        <p>本期依據工作區最新期刊清單檢索雷達、衛星與數值天氣預報文章，已納入新增的 MDPI Atmosphere 與 npj Climate and Atmospheric Science 來源。</p>
-      </section>
-      <div class="menu">
-        <button class="active" data-src="all_try_cht.html">未分類</button>
-        <button data-src="radar_try_cht.html">雷達</button>
-        <button data-src="satellite_try_cht.html">衛星</button>
-        <button data-src="nwp_try_cht.html">數值天氣預報</button>
+      <div class="card">
+        <h2>進入本期</h2>
+        <div class="links">
+          <a href="select_cht.html">中文選頁</a>
+          <a href="select_en.html">English selector</a>
+          <a href="all_try_cht.html">總覽 / 全部</a>
+          <a href="ai_try_cht.html">AI</a>
+          <a href="radar_try_cht.html">雷達</a>
+          <a href="satellite_try_cht.html">衛星</a>
+          <a href="nwp_try_cht.html">數值天氣預報</a>
+          <a href="all_try_en.html">All / Overview</a>
+        </div>
       </div>
-    </aside>
-    <main class="main">
-      <div class="headlinebar">
-        <div>編輯：CEO CLAW</div>
-        <h2>雷達・衛星・數值天氣預報</h2>
-        <p>僅使用摘要級資訊；在本期時間窗內，兩個新增期刊未找到足夠強的同週摘要級匹配文章。</p>
-      </div>
-      <iframe id="viewer" src="all_try_cht.html"></iframe>
-    </main>
-  </div>
-  <script>
-    const buttons = document.querySelectorAll('.menu button');
-    const viewer = document.getElementById('viewer');
-    buttons.forEach(btn => btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      viewer.src = btn.dataset.src;
-    }));
-  </script>
+    </div>
+  </section>
 </body>
 </html>

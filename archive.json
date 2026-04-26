@@ -7,10 +7,10 @@
       "displayDate": "2026-04-13 to 2026-04-19",
       "title": "Science Weekly",
       "titleCht": "Science Weekly",
-      "subtitle": "Weekly digest for 2026-04-13 to 2026-04-19 covering radar, satellite, and numerical weather prediction.",
-      "subtitleCht": "2026-04-13 至 2026-04-19 的每週摘要，聚焦雷達、衛星與數值天氣預報。",
-      "summary": "A two-pane weekly issue covering selected radar, satellite, and NWP papers from the 2026-04-13 to 2026-04-19 window.",
-      "summaryCht": "以雙視窗方式整理 2026-04-13 至 2026-04-19 期間的雷達、衛星與數值天氣預報相關文章。",
+      "subtitle": "Weekly digest for 2026-04-13 to 2026-04-19 covering radar, satellite, numerical weather prediction, and AI-oriented meteorology papers.",
+      "subtitleCht": "2026-04-13 至 2026-04-19 的每週摘要，聚焦雷達、衛星、數值天氣預報與 AI 氣象研究文章。",
+      "summary": "A bilingual weekly issue that separates primary AI papers from forecast-system papers, retains a strong radar lead, and records the lack of a clean same-week satellite feature honestly.",
+      "summaryCht": "本期雙語週刊把 AI 主分類與預報系統文章分開處理，保留明確的雷達主文，並誠實記錄同週衛星主題主文的缺口。",
       "thumbnailLabel": "Vol. 20260413–20260419",
       "thumbnailLabelCht": "20260413–20260419 期",
       "path": "./20260413_20260419/",
@@ -26,24 +26,28 @@
       "nwpCht": "./20260413_20260419/nwp_try_cht.html",
       "tags": [
         "Radar",
-        "Satellite",
-        "NWP"
+        "Satellite gap",
+        "NWP",
+        "AI"
       ],
       "tagsCht": [
         "雷達",
-        "衛星",
-        "數值天氣預報"
-      ]
+        "衛星缺口",
+        "數值天氣預報",
+        "AI"
+      ],
+      "aiEn": "./20260413_20260419/ai_try_en.html",
+      "aiCht": "./20260413_20260419/ai_try_cht.html"
     },
     {
       "date": "20260406_20260412",
       "displayDate": "2026-04-06 to 2026-04-12",
       "title": "Science Weekly",
       "titleCht": "Science Weekly",
-      "subtitle": "Weekly digest for 2026-04-06 to 2026-04-12 covering radar, satellite, and numerical weather prediction.",
-      "subtitleCht": "2026-04-06 至 2026-04-12 的每週摘要，聚焦雷達、衛星與數值天氣預報。",
-      "summary": "A two-pane weekly issue covering selected radar, satellite, and NWP papers from the 2026-04-06 to 2026-04-12 window.",
-      "summaryCht": "以雙視窗方式整理 2026-04-06 至 2026-04-12 期間的雷達、衛星與數值天氣預報相關文章。",
+      "subtitle": "Weekly digest for 2026-04-06 to 2026-04-12 covering radar, satellite, numerical weather prediction, and abstract-evidenced AI-related papers.",
+      "subtitleCht": "2026-04-06 至 2026-04-12 的每週摘要，聚焦雷達、衛星、數值天氣預報，以及可由摘要證實的 AI 相關文章。",
+      "summary": "A two-pane weekly issue refreshed from the live journal list, now with AI pages and visible secondary-category labels for dual-attribute papers.",
+      "summaryCht": "依最新期刊清單重建的雙視窗週刊，新增 AI 頁面，並為跨類文章標示可見的次要分類。",
       "thumbnailLabel": "Vol. 20260406–20260412",
       "thumbnailLabelCht": "20260406–20260412 期",
       "path": "./20260406_20260412/",
@@ -60,23 +64,27 @@
       "tags": [
         "Radar",
         "Satellite",
-        "NWP"
+        "NWP",
+        "AI"
       ],
       "tagsCht": [
         "雷達",
         "衛星",
-        "數值天氣預報"
-      ]
+        "數值天氣預報",
+        "AI"
+      ],
+      "aiEn": "./20260406_20260412/ai_try_en.html",
+      "aiCht": "./20260406_20260412/ai_try_cht.html"
     },
     {
       "date": "20260330_20260405",
       "displayDate": "2026-03-30 to 2026-04-05",
       "title": "Science Weekly",
       "titleCht": "Science Weekly",
-      "subtitle": "Weekly digest for 2026-03-30 to 2026-04-05 covering radar, satellite, and numerical weather prediction.",
-      "subtitleCht": "2026-03-30 至 2026-04-05 的每週摘要，聚焦雷達、衛星與數值天氣預報。",
-      "summary": "A two-pane weekly issue covering selected radar, satellite, and NWP papers from the 2026-03-30 to 2026-04-05 window.",
-      "summaryCht": "以雙視窗方式整理 2026-03-30 至 2026-04-05 期間的雷達、衛星與數值天氣預報相關文章。",
+      "subtitle": "Weekly digest for 2026-03-30 to 2026-04-05 covering radar, satellite, numerical weather prediction, and AI-for-weather papers.",
+      "subtitleCht": "2026-03-30 至 2026-04-05 的每週摘要，聚焦雷達、衛星、數值天氣預報與 AI 氣象文章。",
+      "summary": "A refreshed two-pane issue for 2026-03-30 to 2026-04-05 with primary-category placement plus visible secondary labels for dual-attribute papers.",
+      "summaryCht": "重整後的雙視窗週報，涵蓋 2026-03-30 至 2026-04-05 期間文章，並為雙重屬性論文加上可見次分類標籤。",
       "thumbnailLabel": "Vol. 20260330–20260405",
       "thumbnailLabelCht": "20260330–20260405 期",
       "path": "./20260330_20260405/",
@@ -93,13 +101,17 @@
       "tags": [
         "Radar",
         "Satellite",
-        "NWP"
+        "NWP",
+        "AI"
       ],
       "tagsCht": [
         "雷達",
         "衛星",
-        "數值天氣預報"
-      ]
+        "數值天氣預報",
+        "AI"
+      ],
+      "aiEn": "./20260330_20260405/ai_try_en.html",
+      "aiCht": "./20260330_20260405/ai_try_cht.html"
     }
   ]
 }
