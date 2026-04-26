@@ -251,20 +251,12 @@
       color: var(--accent-dark);
       box-shadow: inset 0 -3px 0 rgba(93,69,31,.08);
     }
-    .cta a::before {
-      content: attr(data-label);
-      color: var(--red);
-      margin-right: 10px;
-      font-size: 10px;
-      letter-spacing: .18em;
-    }
     .cta .primary {
       background: var(--black);
       color: #fff;
       border-color: var(--black);
       box-shadow: inset 0 -3px 0 rgba(255,255,255,.12);
     }
-    .cta .primary::before { color: var(--gold); }
     .cta .secondary { background: #f8f0dd; color: var(--accent-dark); border-color: #dbcaa6; }
     .lead-panel {
       border-left: 1px solid var(--line);
@@ -528,7 +520,7 @@
     }
     .quicklinks-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 0;
       border: 1px solid #ccb78d;
       background: #fffdf8;
@@ -550,18 +542,6 @@
     }
     .quicklinks-grid a:last-child {
       border-right: 0;
-    }
-    .linkset {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 14px;
-    }
-    .linkset a {
-      text-decoration: none;
-      color: var(--accent-dark);
-      border-bottom: 1px solid var(--accent);
-      font-size: 14px;
     }
     .footer { margin-top: 22px; color: var(--muted); font-size: 13px; }
     @media (max-width: 980px) {
@@ -719,7 +699,8 @@
             openEnglish: issue.enSelector || `${issueBasePath}select_en.html`,
             openRadar: issue.radarEn || `${issueBasePath}radar_try_en.html`,
             openSatellite: issue.satelliteEn || `${issueBasePath}satellite_try_en.html`,
-            openNwp: issue.nwpEn || `${issueBasePath}nwp_try_en.html`
+            openNwp: issue.nwpEn || `${issueBasePath}nwp_try_en.html`,
+            openAi: issue.aiEn || `${issueBasePath}ai_try_en.html`
           };
         };
 
@@ -730,6 +711,7 @@
         const leadRadarHref = latestLinks.openRadar;
         const leadSatelliteHref = latestLinks.openSatellite;
         const leadNwpHref = latestLinks.openNwp;
+        const leadAiHref = latestLinks.openAi;
 
         leadStory.innerHTML = `
           <article class="lead-story lead-banner">
@@ -754,17 +736,15 @@
                 Live archive banner for the newest issue.
               </div>
             </div>
-            <div class="cta">
-              <a class="primary" data-label="Desk" href="${escapeHtml(leadMainHref)}">English Selector</a>
-              <a class="secondary" data-label="Bilingual" href="${escapeHtml(leadChtHref)}">Chinese Selector</a>
-              <a class="secondary" data-label="Archive" href="${escapeHtml(leadAltHref)}">Main Issue Page</a>
-            </div>
             <div class="quicklinks">
               <div class="quicklinks-title">Latest issue utility bar</div>
               <div class="quicklinks-grid">
-                <a href="${escapeHtml(leadRadarHref)}">Radar Desk</a>
-                <a href="${escapeHtml(leadSatelliteHref)}">Satellite Desk</a>
-                <a href="${escapeHtml(leadNwpHref)}">NWP Desk</a>
+                <a href="${escapeHtml(leadChtHref)}">Chinese</a>
+                <a href="${escapeHtml(leadMainHref)}">English</a>
+                <a href="${escapeHtml(leadRadarHref)}">Radar</a>
+                <a href="${escapeHtml(leadSatelliteHref)}">Satellite</a>
+                <a href="${escapeHtml(leadNwpHref)}">NWP</a>
+                <a href="${escapeHtml(leadAiHref)}">AI</a>
               </div>
             </div>
             <div class="meta-strip">
@@ -822,17 +802,13 @@
                 <h3>${escapeHtml(title)}<span class="status-badge">${escapeHtml(statusLabel)}</span></h3>
                 <p class="summary">${escapeHtml(summary)}</p>
                 <div class="tags">${tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
-                <div class="action-row">
-                  <a href="${escapeHtml(links.openChinese)}">Chinese Desk</a>
-                  <a href="${escapeHtml(links.openEnglish)}">English Desk</a>
-                  <a href="${escapeHtml(links.openRadar)}">Radar Desk</a>
-                  <a href="${escapeHtml(links.openSatellite)}">Satellite Desk</a>
-                  <a href="${escapeHtml(links.openNwp)}">NWP Desk</a>
-                </div>
-                <div class="linkset">
-                  <a href="${escapeHtml(issue.enSelector || issue.path || './')}">English selector</a>
-                  <a href="${escapeHtml(issue.chtSelector || issue.path || './')}">中文選單</a>
-                  <a href="${escapeHtml(issue.path || issue.enSelector || './')}">Main issue page</a>
+                <div class="action-row" style="grid-template-columns: repeat(6, minmax(0, 1fr));">
+                  <a href="${escapeHtml(links.openChinese)}">Chinese</a>
+                  <a href="${escapeHtml(links.openEnglish)}">English</a>
+                  <a href="${escapeHtml(links.openRadar)}">Radar</a>
+                  <a href="${escapeHtml(links.openSatellite)}">Satellite</a>
+                  <a href="${escapeHtml(links.openNwp)}">NWP</a>
+                  <a href="${escapeHtml(links.openAi)}">AI</a>
                 </div>
               </div>
             </article>

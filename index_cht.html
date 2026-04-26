@@ -212,15 +212,6 @@
       min-height: 48px;
     }
     .cta a:last-child { border-right: 0; }
-    .cta a::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: currentColor;
-      opacity: .72;
-      flex: 0 0 auto;
-    }
     .cta .primary {
       background: rgba(243,199,111,.16);
       color: #f8d583;
@@ -268,11 +259,6 @@
       min-height: 44px;
     }
     .quick-link-row a:last-child { border-right: 0; }
-    .quick-link-row a::before {
-      content: "→";
-      font-size: 11px;
-      opacity: .72;
-    }
     .lead-panel {
       border-left: 1px solid rgba(255,255,255,.14);
       padding: 28px 24px 28px;
@@ -499,7 +485,7 @@
     }
     .action-row {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 0;
       margin-top: 16px;
       border-top: 1px solid #d8cfbd;
@@ -522,12 +508,6 @@
       position: relative;
     }
     .action-row a:last-child { border-right: 0; }
-    .action-row a::before {
-      content: "•";
-      margin-right: 8px;
-      color: var(--red);
-      font-size: 13px;
-    }
     .footer { margin-top: 22px; color: var(--muted); font-size: 13px; }
     @media (max-width: 980px) {
       .lead-layout,
@@ -686,6 +666,7 @@
         const leadRadarHref = latest.radarCht || `${latestBasePath}radar_try_cht.html`;
         const leadSatelliteHref = latest.satelliteCht || `${latestBasePath}satellite_try_cht.html`;
         const leadNwpHref = latest.nwpCht || `${latestBasePath}nwp_try_cht.html`;
+        const leadAiHref = latest.aiCht || `${latestBasePath}ai_try_cht.html`;
         const leadBadge = latest.displayDate || latest.date || 'Latest';
 
         leadStory.innerHTML = `
@@ -697,20 +678,15 @@
             </div>
             <h3>${escapeHtml((latest.displayDate || latest.date || '') + '｜' + leadTitle)}</h3>
             <p>${escapeHtml(leadSummary)}</p>
-            <div class="cta">
-              <a class="primary" href="${escapeHtml(leadMainHref)}">版面：中文</a>
-              <a class="secondary" href="${escapeHtml(leadEnHref)}">版面：English</a>
-              <a class="secondary" href="${escapeHtml(leadAltHref)}">期號首頁</a>
-            </div>
             <div class="quick-links">
-              <h4>工具列</h4>
-              <p>快速切換本期語言版與主題版面。</p>
+              <h4>Latest Edition</h4>
               <div class="quick-link-row">
                 <a href="${escapeHtml(leadMainHref)}">中文</a>
                 <a href="${escapeHtml(leadEnHref)}">English</a>
                 <a href="${escapeHtml(leadRadarHref)}">雷達</a>
                 <a href="${escapeHtml(leadSatelliteHref)}">衛星</a>
                 <a href="${escapeHtml(leadNwpHref)}">NWP</a>
+                <a href="${escapeHtml(leadAiHref)}">AI</a>
               </div>
             </div>
             <div class="meta-strip">
@@ -756,6 +732,7 @@
           const issueRadarHref = issue.radarCht || `${basePath}radar_try_cht.html`;
           const issueSatelliteHref = issue.satelliteCht || `${basePath}satellite_try_cht.html`;
           const issueNwpHref = issue.nwpCht || `${basePath}nwp_try_cht.html`;
+          const issueAiHref = issue.aiCht || `${basePath}ai_try_cht.html`;
           return `
             <article class="issue-card">
               <div class="thumb" data-label="${escapeHtml(issue.thumbnailLabelCht || issue.thumbnailLabel || issue.displayDate || title)}">
@@ -777,18 +754,14 @@
                 <h3>${escapeHtml(title)}</h3>
                 <p class="summary">${escapeHtml(summary)}</p>
                 <div class="action-row">
-                  <a href="${escapeHtml(issueChtHref)}">中文版</a>
+                  <a href="${escapeHtml(issueChtHref)}">中文</a>
                   <a href="${escapeHtml(issueEnHref)}">English</a>
                   <a href="${escapeHtml(issueRadarHref)}">雷達</a>
                   <a href="${escapeHtml(issueSatelliteHref)}">衛星</a>
                   <a href="${escapeHtml(issueNwpHref)}">NWP</a>
+                  <a href="${escapeHtml(issueAiHref)}">AI</a>
                 </div>
                 <div class="tags">${tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
-                <div class="linkset">
-                  <a href="${escapeHtml(issueChtHref)}">中文選單</a>
-                  <a href="${escapeHtml(issueEnHref)}">English selector</a>
-                  <a href="${escapeHtml(issue.path || issueChtHref || './')}">期號主頁</a>
-                </div>
               </div>
             </article>
           `;
