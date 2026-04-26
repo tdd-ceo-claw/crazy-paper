@@ -457,31 +457,13 @@
       background: var(--black);
       color: #fff;
     }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .tag {
-      border: 1px solid #d9c79d;
-      color: var(--accent-dark);
-      background: #fbf5e8;
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 12px;
-    }
-    .linkset {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .issue-comment {
       margin-top: 14px;
-    }
-    .linkset a {
-      text-decoration: none;
-      color: var(--accent-dark);
-      border-bottom: 1px solid var(--accent);
-      font-size: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(16,16,16,.12);
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 15px;
     }
     .action-row {
       display: grid;
@@ -658,7 +640,7 @@
         const leadTitle = latest.titleCht || latest.title || 'Science Weekly';
         const leadSubtitle = latest.subtitleCht || latest.subtitle || '';
         const leadSummary = latest.summaryCht || latest.summary || leadSubtitle;
-        const leadTags = (latest.tagsCht && latest.tagsCht.length ? latest.tagsCht : (latest.tags || []));
+        const leadComment = latest.commentCht || leadSubtitle || '這裡會顯示本期的簡短編輯觀察。';
         const leadMainHref = latest.chtSelector || latest.path || './';
         const leadEnHref = latest.enSelector || './index_en.html';
         const leadAltHref = latest.path || leadMainHref;
@@ -693,7 +675,6 @@
               <span>日期：${escapeHtml(latest.displayDate || latest.date || '')}</span>
               <span>主題：${escapeHtml(leadSubtitle || '每週科學摘要')}</span>
             </div>
-            <div class="tags">${leadTags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
           </article>
           <aside class="lead-panel">
             <div class="thumbnail-block">
@@ -711,8 +692,8 @@
               <div class="thumb-label">${escapeHtml(latest.thumbnailLabelCht || latest.thumbnailLabel || latest.displayDate || 'Latest')}</div>
             </div>
             <div>
-              <div class="kicker" style="color:#f2c56d;">Issue Desk</div>
-              <p style="margin:8px 0 0; color: rgba(247,240,223,.78); line-height: 1.85;">${escapeHtml(leadSubtitle || '最新一期已自動提升為首頁主打。')}</p>
+              <div class="kicker" style="color:#f2c56d;">編輯手記</div>
+              <p style="margin:8px 0 0; color: rgba(247,240,223,.78); line-height: 1.85;">${escapeHtml(leadComment)}</p>
             </div>
           </aside>
         `;
@@ -723,7 +704,7 @@
           const title = issue.titleCht || issue.title || 'Science Weekly';
           const subtitle = issue.subtitleCht || issue.subtitle || '';
           const summary = issue.summaryCht || issue.summary || subtitle;
-          const tags = (issue.tagsCht && issue.tagsCht.length ? issue.tagsCht : (issue.tags || []));
+          const comment = issue.commentCht || subtitle || '';
           const statusLabel = index === 0 ? '最新一期' : '往期';
           const statusClass = index === 0 ? 'issue-status latest' : 'issue-status';
           const basePath = issue.path || './';
@@ -753,6 +734,7 @@
                 </div>
                 <h3>${escapeHtml(title)}</h3>
                 <p class="summary">${escapeHtml(summary)}</p>
+                <div class="issue-comment">${escapeHtml(comment)}</div>
                 <div class="action-row">
                   <a href="${escapeHtml(issueChtHref)}">中文</a>
                   <a href="${escapeHtml(issueEnHref)}">English</a>
@@ -761,7 +743,6 @@
                   <a href="${escapeHtml(issueNwpHref)}">NWP</a>
                   <a href="${escapeHtml(issueAiHref)}">AI</a>
                 </div>
-                <div class="tags">${tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
               </div>
             </article>
           `;

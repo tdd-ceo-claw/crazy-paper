@@ -432,19 +432,13 @@
       line-height: 1.88;
       font-size: 16px;
     }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .tag {
-      border: 1px solid #d9c79d;
-      color: var(--accent-dark);
-      background: #fbf5e8;
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 12px;
+    .issue-comment {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(16,16,16,.12);
+      color: var(--muted);
+      line-height: 1.82;
+      font-size: 15px;
     }
     .status-badge {
       display: inline-flex;
@@ -691,7 +685,7 @@
         const leadTitle = latest.title || latest.titleCht || 'Science Weekly';
         const leadSubtitle = latest.subtitle || latest.subtitleCht || '';
         const leadSummary = latest.summary || latest.summaryCht || leadSubtitle;
-        const leadTags = (latest.tags && latest.tags.length ? latest.tags : (latest.tagsCht || []));
+        const leadComment = latest.commentEn || leadSubtitle || 'A brief editorial note for this issue will appear here.';
         const issueLinks = issue => {
           const issueBasePath = issue.path || './';
           return {
@@ -752,7 +746,6 @@
               <span>Focus: ${escapeHtml(leadSubtitle || 'Weekly science digest')}</span>
               <span>Edition: English</span>
             </div>
-            <div class="tags">${leadTags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
           </article>
           <aside class="lead-panel">
             <div class="thumbnail-block">
@@ -771,7 +764,7 @@
             </div>
             <div>
               <div class="kicker">Issue Desk</div>
-              <p style="margin:8px 0 0; color: var(--muted); line-height: 1.85;">${escapeHtml(leadSubtitle || 'The latest issue is automatically promoted to the homepage lead story.')}</p>
+              <p style="margin:8px 0 0; color: var(--muted); line-height: 1.85;">${escapeHtml(leadComment)}</p>
             </div>
           </aside>
         `;
@@ -781,7 +774,7 @@
           const title = issue.title || issue.titleCht || 'Science Weekly';
           const subtitle = issue.subtitle || issue.subtitleCht || '';
           const summary = issue.summary || issue.summaryCht || subtitle;
-          const tags = (issue.tags && issue.tags.length ? issue.tags : (issue.tagsCht || []));
+          const comment = issue.commentEn || subtitle || '';
           const statusLabel = index === 0 ? 'Latest Issue' : 'Previous Issue';
           const links = issueLinks(issue);
           return `
@@ -801,7 +794,7 @@
                 <div class="kicker">${escapeHtml(issue.displayDate || issue.date || '')}</div>
                 <h3>${escapeHtml(title)}<span class="status-badge">${escapeHtml(statusLabel)}</span></h3>
                 <p class="summary">${escapeHtml(summary)}</p>
-                <div class="tags">${tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
+                <div class="issue-comment">${escapeHtml(comment)}</div>
                 <div class="action-row" style="grid-template-columns: repeat(6, minmax(0, 1fr));">
                   <a href="${escapeHtml(links.openChinese)}">Chinese</a>
                   <a href="${escapeHtml(links.openEnglish)}">English</a>

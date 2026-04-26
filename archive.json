@@ -37,7 +37,9 @@
         "AI"
       ],
       "aiEn": "./20260413_20260419/ai_try_en.html",
-      "aiCht": "./20260413_20260419/ai_try_cht.html"
+      "aiCht": "./20260413_20260419/ai_try_cht.html",
+      "commentEn": "This week is strongest on radar and forecast-system evaluation, with AI treated as a method rather than a standalone buzzword. We kept the satellite bucket intentionally sparse because the live source list did not yield a same-week satellite paper strong enough to headline honestly.",
+      "commentCht": "這一週最有力的內容落在雷達觀測與預報系統評估，AI 更像方法核心，而不是獨立噱頭。衛星分類則刻意保留稀疏，因為依目前來源清單，沒有找到足夠強、能誠實作為同週主文的衛星文章。"
     },
     {
       "date": "20260406_20260412",
@@ -74,7 +76,9 @@
         "AI"
       ],
       "aiEn": "./20260406_20260412/ai_try_en.html",
-      "aiCht": "./20260406_20260412/ai_try_cht.html"
+      "aiCht": "./20260406_20260412/ai_try_cht.html",
+      "commentEn": "This issue feels balanced: radar, satellite, and NWP each contribute a real anchor paper, while AI appears mostly as a secondary method woven into forecasting and moisture-diagnostic work. The dual labels help show that the week is about integration, not isolated categories.",
+      "commentCht": "這一期的結構相對平衡：雷達、衛星與 NWP 都有可以站得住腳的主文，而 AI 多半以次要方法角色嵌入預報與水氣診斷研究中。雙屬性標示的價值，就在於把這種跨類整合清楚說出來。"
     },
     {
       "date": "20260330_20260405",
@@ -111,7 +115,9 @@
         "AI"
       ],
       "aiEn": "./20260330_20260405/ai_try_en.html",
-      "aiCht": "./20260330_20260405/ai_try_cht.html"
+      "aiCht": "./20260330_20260405/ai_try_cht.html",
+      "commentEn": "The earliest week in this set is anchored by classic operational radar papers, with AI entering through critique and multisatellite retrieval design. That mix makes the issue useful: it shows both the continuing weight of measurement systems and the growing pressure to interpret them with machine-learning tools.",
+      "commentCht": "這三週裡最早的一期，主軸仍然很明顯地落在傳統作業雷達研究上，而 AI 則從方法批判與多衛星降水反演設計切入。這樣的組合很有意思，因為它同時呈現了觀測系統的重要性，以及機器學習工具逐漸介入解讀流程的趨勢。"
     }
   ]
 }
