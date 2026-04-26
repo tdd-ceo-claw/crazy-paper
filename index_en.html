@@ -440,6 +440,23 @@
       line-height: 1.82;
       font-size: 15px;
     }
+    .comment-icons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .comment-icons span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid #d8cfbd;
+      background: #fbf5e8;
+    }
     .status-badge {
       display: inline-flex;
       align-items: center;
@@ -711,7 +728,7 @@
           <article class="lead-story lead-banner">
             <div class="banner-topline">
               <span>Front Page Feature</span>
-              <span class="banner-date">${escapeHtml(latest.displayDate || latest.date || '')}</span>
+              <span class="banner-date">Updated: 2026-04-26</span>
             </div>
             <h3 class="banner-headline">${escapeHtml(leadTitle)}</h3>
             <div class="banner-divider"></div>
@@ -742,7 +759,7 @@
               </div>
             </div>
             <div class="meta-strip">
-              <span>Date: ${escapeHtml(latest.displayDate || latest.date || '')}</span>
+              <span>Updated: 2026-04-26</span>
               <span>Focus: ${escapeHtml(leadSubtitle || 'Weekly science digest')}</span>
               <span>Edition: English</span>
             </div>
@@ -765,6 +782,7 @@
             <div>
               <div class="kicker">Issue Desk</div>
               <p style="margin:8px 0 0; color: var(--muted); line-height: 1.85;">${escapeHtml(leadComment)}</p>
+              <div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌧️</span><span>🛰️</span></div>
             </div>
           </aside>
         `;
@@ -794,7 +812,7 @@
                 <div class="kicker">${escapeHtml(issue.displayDate || issue.date || '')}</div>
                 <h3>${escapeHtml(title)}<span class="status-badge">${escapeHtml(statusLabel)}</span></h3>
                 <p class="summary">${escapeHtml(summary)}</p>
-                <div class="issue-comment">${escapeHtml(comment)}</div>
+                <div class="issue-comment">${escapeHtml(comment)}<div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌦️</span><span>📡</span></div></div>
                 <div class="action-row" style="grid-template-columns: repeat(6, minmax(0, 1fr));">
                   <a href="${escapeHtml(links.openChinese)}">Chinese</a>
                   <a href="${escapeHtml(links.openEnglish)}">English</a>

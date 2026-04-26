@@ -465,6 +465,24 @@
       line-height: 1.9;
       font-size: 15px;
     }
+    .comment-icons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .comment-icons span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.06);
+      color: #fff6df;
+    }
     .action-row {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -655,7 +673,7 @@
           <article class="lead-story">
             <div class="kicker">Front Page Banner</div>
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:10px; color:rgba(247,240,223,.8);">
-              <span style="border:1px solid rgba(255,255,255,.2); padding:6px 10px; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">${escapeHtml(leadBadge)}</span>
+              <span style="border:1px solid rgba(255,255,255,.2); padding:6px 10px; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">2026-04-26</span>
               <span style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#f2c56d;">Latest Edition</span>
             </div>
             <h3>${escapeHtml((latest.displayDate || latest.date || '') + '｜' + leadTitle)}</h3>
@@ -672,7 +690,7 @@
               </div>
             </div>
             <div class="meta-strip">
-              <span>日期：${escapeHtml(latest.displayDate || latest.date || '')}</span>
+              <span>更新日期：2026-04-26</span>
               <span>主題：${escapeHtml(leadSubtitle || '每週科學摘要')}</span>
             </div>
           </article>
@@ -694,6 +712,7 @@
             <div>
               <div class="kicker" style="color:#f2c56d;">編輯手記</div>
               <p style="margin:8px 0 0; color: rgba(247,240,223,.78); line-height: 1.85;">${escapeHtml(leadComment)}</p>
+              <div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌧️</span><span>🛰️</span></div>
             </div>
           </aside>
         `;
@@ -734,7 +753,7 @@
                 </div>
                 <h3>${escapeHtml(title)}</h3>
                 <p class="summary">${escapeHtml(summary)}</p>
-                <div class="issue-comment">${escapeHtml(comment)}</div>
+                <div class="issue-comment">${escapeHtml(comment)}<div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌦️</span><span>📡</span></div></div>
                 <div class="action-row">
                   <a href="${escapeHtml(issueChtHref)}">中文</a>
                   <a href="${escapeHtml(issueEnHref)}">English</a>
