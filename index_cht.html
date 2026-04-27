@@ -6,23 +6,23 @@
   <title>Science Weekly 檔案首頁 | crazy-paper</title>
   <style>
     :root {
-      --bg: #efe7d6;
-      --paper: #fffdf8;
-      --ink: #181818;
-      --muted: #5f584e;
-      --line: #d8cfbd;
-      --accent: #8a6d3b;
-      --accent-dark: #5d451f;
-      --black: #101010;
-      --red: #9f3b2f;
-      --gold: #d8bc77;
+      --bg: #07111f;
+      --paper: #0f1c2f;
+      --ink: #eaf2ff;
+      --muted: #96a9c7;
+      --line: #223552;
+      --accent: #4fd1ff;
+      --accent-dark: #8be6ff;
+      --black: #040b16;
+      --red: #59c7ff;
+      --gold: #7de3ff;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background:
-        radial-gradient(circle at top, rgba(255,255,255,.5), transparent 32%),
-        var(--bg);
+        radial-gradient(circle at top, rgba(79,209,255,.18), transparent 26%),
+        linear-gradient(180deg, #050b16 0%, #091425 52%, #07111f 100%);
       color: var(--ink);
       font-family: "Noto Serif TC", "PMingLiU", Georgia, serif;
     }
@@ -43,7 +43,7 @@
     .masthead {
       text-align: center;
       padding: 18px 0 14px;
-      border-bottom: 8px double var(--black);
+      border-bottom: 8px double #3f628e;
     }
     .masthead .eyebrow {
       color: var(--red);
@@ -74,22 +74,22 @@
     }
     .lang-switch a {
       text-decoration: none;
-      border: 1px solid var(--black);
+      border: 1px solid #35537e;
       padding: 10px 16px;
       border-radius: 999px;
-      background: var(--paper);
+      background: linear-gradient(180deg, rgba(15,28,47,.96), rgba(12,24,42,.98));
       font-size: 14px;
     }
     .lang-switch a.active {
-      background: var(--black);
-      color: #fff;
+      background: linear-gradient(180deg, #0d2038, #081425);
+      color: #eaf8ff;
     }
     .section {
-      background: var(--paper);
+      background: linear-gradient(180deg, rgba(15,28,47,.96), rgba(12,24,42,.98));
       border: 1px solid var(--line);
       margin-top: 24px;
       padding: 22px 24px 26px;
-      box-shadow: 0 8px 24px rgba(60, 40, 12, .05);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, .34);
     }
     .section.lead-section {
       padding: 0;
@@ -126,7 +126,7 @@
       align-items: stretch;
       background:
         linear-gradient(135deg, rgba(16,16,16,.96) 0 57%, rgba(43,30,15,.96) 57% 100%),
-        linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0));
+        linear-gradient(180deg, rgba(79,209,255,.16), rgba(255,255,255,0));
       color: #f7f0df;
     }
     .lead-story .kicker,
@@ -147,12 +147,12 @@
       inset: 0;
       background:
         linear-gradient(90deg, rgba(216,188,119,.2), transparent 28%),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 34px);
+        repeating-linear-gradient(0deg, rgba(79,209,255,.06) 0 1px, transparent 1px 34px);
       pointer-events: none;
     }
     .lead-story > * { position: relative; z-index: 1; }
     .lead-story .kicker {
-      color: #f2c56d;
+      color: #89e7ff;
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -173,7 +173,7 @@
     }
     .lead-story p {
       margin: 0;
-      color: rgba(247,240,223,.86);
+      color: rgba(225,241,255,.86);
       line-height: 1.88;
       font-size: 18px;
       max-width: 60ch;
@@ -184,8 +184,8 @@
       flex-wrap: wrap;
       margin: 18px 0 0;
       padding-top: 14px;
-      border-top: 1px solid rgba(255,255,255,.18);
-      color: rgba(247,240,223,.72);
+      border-top: 1px solid rgba(79,209,255,.18);
+      color: rgba(180,210,242,.78);
       font-size: 13px;
       letter-spacing: .04em;
     }
@@ -194,9 +194,9 @@
       flex-wrap: wrap;
       gap: 0;
       margin-top: 20px;
-      border-top: 1px solid rgba(255,255,255,.18);
-      border-bottom: 1px solid rgba(255,255,255,.18);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border-top: 1px solid rgba(79,209,255,.18);
+      border-bottom: 1px solid rgba(79,209,255,.18);
+      background: linear-gradient(180deg, rgba(79,209,255,.08), rgba(79,209,255,.03));
     }
     .cta a {
       text-decoration: none;
@@ -204,7 +204,7 @@
       font-size: 13px;
       letter-spacing: .08em;
       text-transform: uppercase;
-      border-right: 1px solid rgba(255,255,255,.16);
+      border-right: 1px solid rgba(79,209,255,.16);
       color: #f7f0df;
       display: inline-flex;
       align-items: center;
@@ -213,16 +213,16 @@
     }
     .cta a:last-child { border-right: 0; }
     .cta .primary {
-      background: rgba(243,199,111,.16);
-      color: #f8d583;
+      background: rgba(79,209,255,.12);
+      color: #89e7ff;
       font-weight: 700;
     }
     .cta .secondary { background: transparent; }
     .quick-links {
       margin-top: 18px;
       border-top: 2px solid rgba(244,211,143,.68);
-      border-bottom: 1px solid rgba(255,255,255,.16);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+      border-bottom: 1px solid rgba(79,209,255,.16);
+      background: linear-gradient(180deg, rgba(79,209,255,.07), rgba(79,209,255,.02));
     }
     .quick-links h4 {
       margin: 0;
@@ -230,7 +230,7 @@
       font-size: 12px;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: #f4d38f;
+      color: #89e7ff;
     }
     .quick-links p {
       margin: 6px 0 0;
@@ -243,7 +243,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0;
-      border-top: 1px solid rgba(255,255,255,.12);
+      border-top: 1px solid rgba(79,209,255,.12);
     }
     .quick-link-row a {
       text-decoration: none;
@@ -251,8 +251,8 @@
       font-size: 13px;
       letter-spacing: .08em;
       text-transform: uppercase;
-      border-right: 1px solid rgba(255,255,255,.14);
-      color: #fff6df;
+      border-right: 1px solid rgba(79,209,255,.14);
+      color: #dff8ff;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -260,24 +260,24 @@
     }
     .quick-link-row a:last-child { border-right: 0; }
     .lead-panel {
-      border-left: 1px solid rgba(255,255,255,.14);
+      border-left: 1px solid rgba(79,209,255,.14);
       padding: 28px 24px 28px;
       display: grid;
       gap: 18px;
       align-content: start;
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      background: linear-gradient(180deg, rgba(79,209,255,.06), rgba(79,209,255,.02));
     }
     .thumbnail-block {
       min-height: 240px;
       position: relative;
       overflow: hidden;
-      border: 1px solid #ccb78d;
+      border: 1px solid #2d4b74;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.88), rgba(243,233,209,.92)),
-        repeating-linear-gradient(0deg, rgba(93,69,31,.07) 0 1px, transparent 1px 28px),
-        repeating-linear-gradient(90deg, rgba(93,69,31,.07) 0 1px, transparent 1px 28px),
-        linear-gradient(135deg, #f7ecd2, #ead6a6 45%, #f9f2df 100%);
-      box-shadow: inset 0 0 0 6px rgba(255,255,255,.5);
+        linear-gradient(180deg, rgba(18,35,58,.92), rgba(11,22,39,.96)),
+        repeating-linear-gradient(0deg, rgba(95,195,255,.08) 0 1px, transparent 1px 28px),
+        repeating-linear-gradient(90deg, rgba(95,195,255,.08) 0 1px, transparent 1px 28px),
+        linear-gradient(135deg, #11243f, #153558 45%, #0b1728 100%);
+      box-shadow: inset 0 0 0 6px rgba(79,209,255,.14);
     }
     .thumbnail-block::before {
       content: "SCIENCE WEEKLY";
@@ -296,7 +296,7 @@
       position: absolute;
       inset: auto 16px 16px 16px;
       height: 58px;
-      background: linear-gradient(90deg, rgba(16,16,16,.88) 0 36%, rgba(16,16,16,.16) 36% 100%);
+      background: linear-gradient(90deg, rgba(16,16,16,.88) 0 36%, rgba(95,195,255,.16) 36% 100%);
       border-top: 4px solid var(--gold);
     }
     .thumb-grid {
@@ -308,8 +308,8 @@
     }
     .thumb-lead,
     .thumb-side {
-      border: 1px solid rgba(16,16,16,.16);
-      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(95,195,255,.16);
+      background: rgba(13,27,47,.72);
       padding: 12px;
       display: flex;
       flex-direction: column;
@@ -326,7 +326,7 @@
       display: block;
       height: 7px;
       margin-top: 8px;
-      background: linear-gradient(90deg, rgba(16,16,16,.85), rgba(16,16,16,.2));
+      background: linear-gradient(90deg, rgba(16,16,16,.85), rgba(95,195,255,.18));
     }
     .thumb-side span:nth-child(2),
     .thumb-lines span:nth-child(2) { width: 88%; }
@@ -338,7 +338,7 @@
       position: absolute;
       right: 18px;
       bottom: 30px;
-      color: #fff;
+      color: #eaf8ff;
       font-size: 14px;
       letter-spacing: .14em;
       text-transform: uppercase;
@@ -353,18 +353,18 @@
       grid-template-columns: 220px minmax(0, 1fr);
       gap: 18px;
       padding: 18px;
-      border-top: 1px solid #ece4d4;
-      background: linear-gradient(180deg, rgba(255,255,255,.2), rgba(255,255,255,.55));
+      border-top: 1px solid #223552;
+      background: linear-gradient(180deg, rgba(79,209,255,.22), rgba(255,255,255,.55));
     }
     .issue-card:first-child { border-top: 0; padding-top: 4px; }
     .issue-card .thumb {
       min-height: 170px;
       position: relative;
-      border: 1px solid #ccb78d;
+      border: 1px solid #2d4b74;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.9), rgba(244,235,214,.96)),
-        repeating-linear-gradient(0deg, rgba(16,16,16,.06) 0 1px, transparent 1px 24px),
-        linear-gradient(135deg, #f6ecd6, #ecd3a4 55%, #f9f4e7 100%);
+        linear-gradient(180deg, rgba(18,35,58,.94), rgba(11,22,39,.98)),
+        repeating-linear-gradient(0deg, rgba(95,195,255,.08) 0 1px, transparent 1px 24px),
+        linear-gradient(135deg, #11243f, #153558 55%, #0b1728 100%);
       overflow: hidden;
     }
     .issue-card .thumb::before {
@@ -402,8 +402,8 @@
     }
     .thumb-box,
     .thumb-column {
-      border: 1px solid rgba(16,16,16,.14);
-      background: rgba(255,255,255,.64);
+      border: 1px solid rgba(95,195,255,.14);
+      background: rgba(13,27,47,.72);
       padding: 9px;
     }
     .thumb-box strong {
@@ -418,7 +418,7 @@
       display: block;
       height: 6px;
       margin-top: 7px;
-      background: linear-gradient(90deg, rgba(16,16,16,.82), rgba(16,16,16,.16));
+      background: linear-gradient(90deg, rgba(16,16,16,.82), rgba(95,195,255,.16));
     }
     .thumb-column span:nth-child(2), .thumb-box span:nth-child(2) { width: 92%; }
     .thumb-column span:nth-child(3), .thumb-box span:nth-child(3) { width: 78%; }
@@ -446,16 +446,16 @@
       align-items: center;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid #c8b388;
-      background: #fbf5e8;
+      border: 1px solid #4fbfff;
+      background: rgba(79,209,255,.10);
       color: var(--accent-dark);
       font-size: 12px;
       letter-spacing: .08em;
     }
     .issue-status.latest {
       border-color: var(--black);
-      background: var(--black);
-      color: #fff;
+      background: linear-gradient(180deg, #0d2038, #081425);
+      color: #eaf8ff;
     }
     .issue-comment {
       margin-top: 14px;
@@ -479,9 +479,9 @@
       justify-content: center;
       width: 38px;
       height: 38px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.06);
-      color: #fff6df;
+      border: 1px solid rgba(79,209,255,.22);
+      background: rgba(79,209,255,.06);
+      color: #dff8ff;
     }
 +    .title-row {
 +      display: flex;
@@ -503,17 +503,17 @@
       justify-content: center;
       width: 38px;
       height: 38px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.06);
-      color: #fff6df;
+      border: 1px solid rgba(79,209,255,.22);
+      background: rgba(79,209,255,.06);
+      color: #dff8ff;
     }
     .action-row {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 0;
       margin-top: 16px;
-      border-top: 1px solid #d8cfbd;
-      border-bottom: 1px solid #d8cfbd;
+      border-top: 1px solid #223552;
+      border-bottom: 1px solid #223552;
       background: linear-gradient(180deg, #fcf7ec, #f7efdf);
     }
     .action-row a {
@@ -524,7 +524,7 @@
       min-height: 46px;
       text-align: center;
       padding: 10px 12px;
-      border-right: 1px solid #d8cfbd;
+      border-right: 1px solid #223552;
       color: var(--accent-dark);
       font-size: 12px;
       letter-spacing: .1em;
@@ -540,7 +540,7 @@
       }
       .lead-panel {
         border-left: 0;
-        border-top: 1px solid rgba(255,255,255,.14);
+        border-top: 1px solid rgba(79,209,255,.14);
         padding-left: 24px;
         padding-top: 22px;
       }
@@ -556,12 +556,12 @@
       .cta a,
       .quick-link-row a,
       .action-row a {
-        border-right: 1px solid rgba(255,255,255,.14);
-        border-bottom: 1px solid rgba(255,255,255,.12);
+        border-right: 1px solid rgba(79,209,255,.14);
+        border-bottom: 1px solid rgba(79,209,255,.12);
       }
       .action-row a {
-        border-right-color: #d8cfbd;
-        border-bottom-color: #d8cfbd;
+        border-right-color: #223552;
+        border-bottom-color: #223552;
       }
     }
     @media (max-width: 640px) {
@@ -594,7 +594,7 @@
     <header class="masthead">
       <div class="eyebrow">crazy-paper newsroom</div>
       <h1>Science Weekly</h1>
-      <p><a href="./journal-information-cht.html" style="text-decoration:none; border-bottom:1px solid currentColor;">期刊來源資訊</a></p>
+      <p><a href="./journal-information-cht.html" style="text-decoration:none; border-bottom:1px solid currentColor; color: var(--accent-dark);">期刊來源資訊</a></p>
       <nav class="lang-switch" aria-label="Language switcher">
         <a class="active" href="./index_cht.html">繁體中文首頁</a>
         <a href="./index_en.html">English Homepage</a>
@@ -602,7 +602,7 @@
     </header>
 
     <section class="section lead-section">
-      <div class="sectionhead" style="padding: 20px 24px 14px; margin: 0; background: linear-gradient(180deg, #f8f1e1, #f2e3bf); border-bottom: 1px solid rgba(16,16,16,.1);">
+      <div class="sectionhead" style="padding: 20px 24px 14px; margin: 0; background: linear-gradient(180deg, rgba(14,28,47,.96), rgba(12,24,42,.98)); border-bottom: 1px solid rgba(16,16,16,.1);">
         <h2>最新一期</h2>
         <span>頭版橫幅・自動載入</span>
       </div>
@@ -629,7 +629,7 @@
           </div>
           <div id="lead-side-copy">
             <div class="kicker" style="color:#f2c56d;">Issue Desk</div>
-            <p style="margin:8px 0 0; color: rgba(247,240,223,.78); line-height: 1.85;">首頁主打會自動指向 <code style="color:#fff4d3;">archive.json</code> 中最新的一期，避免每次更新都要手動改寫頭條內容。</p>
+            <p style="margin:8px 0 0; color: rgba(225,241,255,.78); line-height: 1.85;">首頁主打會自動指向 <code style="color:#fff4d3;">archive.json</code> 中最新的一期，避免每次更新都要手動改寫頭條內容。</p>
           </div>
         </aside>
       </div>
@@ -704,7 +704,7 @@
           <article class="lead-story">
             <div class="kicker">Front Page Banner</div>
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:10px; color:rgba(247,240,223,.8);">
-              <span style="border:1px solid rgba(255,255,255,.2); padding:6px 10px; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">2026-04-26</span>
+              <span style="border:1px solid rgba(79,209,255,.22); padding:6px 10px; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">2026-04-26</span>
               <span style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#f2c56d;">Latest Edition</span>
             </div>
             <h3>${escapeHtml((latest.displayDate || latest.date || '') + '｜' + leadTitle)}</h3>
@@ -742,7 +742,7 @@
             </div>
             <div>
               <div class="kicker" style="color:#f2c56d;">編輯手記</div>
-              <p style="margin:8px 0 0; color: rgba(247,240,223,.78); line-height: 1.85;">${escapeHtml(leadComment)}</p>
+              <p style="margin:8px 0 0; color: rgba(225,241,255,.78); line-height: 1.85;">${escapeHtml(leadComment)}</p>
               <div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌧️</span><span>🛰️</span></div>
             </div>
           </aside>

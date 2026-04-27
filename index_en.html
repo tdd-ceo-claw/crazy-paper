@@ -6,23 +6,23 @@
   <title>Science Weekly Archive | crazy-paper</title>
   <style>
     :root {
-      --bg: #efe7d6;
-      --paper: #fffdf8;
-      --ink: #181818;
-      --muted: #5f584e;
-      --line: #d8cfbd;
-      --accent: #8a6d3b;
-      --accent-dark: #5d451f;
-      --black: #101010;
-      --red: #9f3b2f;
-      --gold: #d8bc77;
+      --bg: #07111f;
+      --paper: #0f1c2f;
+      --ink: #eaf2ff;
+      --muted: #96a9c7;
+      --line: #223552;
+      --accent: #4fd1ff;
+      --accent-dark: #8be6ff;
+      --black: #040b16;
+      --red: #59c7ff;
+      --gold: #7de3ff;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background:
-        radial-gradient(circle at top, rgba(255,255,255,.5), transparent 32%),
-        var(--bg);
+        radial-gradient(circle at top, rgba(79,209,255,.18), transparent 26%),
+        linear-gradient(180deg, #050b16 0%, #091425 52%, #07111f 100%);
       color: var(--ink);
       font-family: Georgia, "Times New Roman", serif;
     }
@@ -43,7 +43,7 @@
     .masthead {
       text-align: center;
       padding: 18px 0 14px;
-      border-bottom: 8px double var(--black);
+      border-bottom: 8px double #3f628e;
     }
     .masthead .eyebrow {
       color: var(--red);
@@ -74,22 +74,22 @@
     }
     .lang-switch a {
       text-decoration: none;
-      border: 1px solid var(--black);
+      border: 1px solid #35537e;
       padding: 10px 16px;
       border-radius: 999px;
-      background: var(--paper);
+      background: linear-gradient(180deg, rgba(15,28,47,.96), rgba(12,24,42,.98));
       font-size: 14px;
     }
     .lang-switch a.active {
-      background: var(--black);
-      color: #fff;
+      background: linear-gradient(180deg, #0d2038, #081425);
+      color: #eaf8ff;
     }
     .section {
-      background: var(--paper);
+      background: linear-gradient(180deg, rgba(15,28,47,.96), rgba(12,24,42,.98));
       border: 1px solid var(--line);
       margin-top: 24px;
       padding: 22px 24px 26px;
-      box-shadow: 0 8px 24px rgba(60, 40, 12, .05);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, .34);
     }
     .sectionhead {
       display: flex;
@@ -130,11 +130,11 @@
       position: relative;
       overflow: hidden;
       padding: 26px 28px 24px;
-      border: 1px solid #b78d4a;
+      border: 1px solid #35537e;
       background:
-        radial-gradient(circle at top right, rgba(255,255,255,.48), transparent 34%),
-        linear-gradient(135deg, #fff7e7 0%, #f0dab0 45%, #fffaf1 100%);
-      box-shadow: inset 0 0 0 3px rgba(255,255,255,.52), 0 14px 34px rgba(80, 45, 8, .12);
+        radial-gradient(circle at top right, rgba(79,209,255,.16), transparent 34%),
+        linear-gradient(135deg, #0d1a2c 0%, #133154 48%, #0a1728 100%);
+      box-shadow: inset 0 0 0 3px rgba(79,209,255,.14), 0 14px 34px rgba(0, 0, 0, .35);
     }
     .lead-banner::before {
       content: "Banner Feature";
@@ -143,7 +143,7 @@
       right: -42px;
       padding: 8px 52px;
       background: var(--red);
-      color: #fff;
+      color: #eaf8ff;
       font-size: 11px;
       letter-spacing: .18em;
       text-transform: uppercase;
@@ -184,7 +184,7 @@
     .banner-deck {
       margin: 14px 0 0;
       max-width: 58ch;
-      color: #3d352b;
+      color: #d9e8ff;
       line-height: 1.82;
       font-size: 18px;
     }
@@ -201,7 +201,7 @@
       margin-top: 18px;
     }
     .banner-highlights div {
-      border-top: 1px solid rgba(16,16,16,.2);
+      border-top: 1px solid rgba(95,195,255,.18);
       padding-top: 10px;
       font-size: 13px;
       line-height: 1.6;
@@ -221,7 +221,7 @@
       flex-wrap: wrap;
       margin: 18px 0 0;
       padding-top: 14px;
-      border-top: 1px solid #ece4d4;
+      border-top: 1px solid #223552;
       color: var(--muted);
       font-size: 13px;
       letter-spacing: .04em;
@@ -232,7 +232,7 @@
       gap: 10px;
       margin-top: 18px;
       padding-top: 14px;
-      border-top: 1px solid rgba(16,16,16,.14);
+      border-top: 1px solid rgba(95,195,255,.14);
     }
     .cta a {
       text-decoration: none;
@@ -245,19 +245,19 @@
       font-weight: 700;
       letter-spacing: .14em;
       text-transform: uppercase;
-      border: 1px solid #bfa26b;
+      border: 1px solid #35537e;
       border-radius: 0;
-      background: rgba(255,253,248,.86);
+      background: rgba(11,22,40,.92);
       color: var(--accent-dark);
       box-shadow: inset 0 -3px 0 rgba(93,69,31,.08);
     }
     .cta .primary {
-      background: var(--black);
-      color: #fff;
+      background: linear-gradient(180deg, #0d2038, #081425);
+      color: #eaf8ff;
       border-color: var(--black);
-      box-shadow: inset 0 -3px 0 rgba(255,255,255,.12);
+      box-shadow: inset 0 -3px 0 rgba(79,209,255,.12);
     }
-    .cta .secondary { background: #f8f0dd; color: var(--accent-dark); border-color: #dbcaa6; }
+    .cta .secondary { background: rgba(79,209,255,.08); color: var(--accent-dark); border-color: #35537e; }
     .lead-panel {
       border-left: 1px solid var(--line);
       padding-left: 24px;
@@ -269,13 +269,13 @@
       min-height: 240px;
       position: relative;
       overflow: hidden;
-      border: 1px solid #ccb78d;
+      border: 1px solid #2d4b74;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.88), rgba(243,233,209,.92)),
-        repeating-linear-gradient(0deg, rgba(93,69,31,.07) 0 1px, transparent 1px 28px),
-        repeating-linear-gradient(90deg, rgba(93,69,31,.07) 0 1px, transparent 1px 28px),
-        linear-gradient(135deg, #f7ecd2, #ead6a6 45%, #f9f2df 100%);
-      box-shadow: inset 0 0 0 6px rgba(255,255,255,.5);
+        linear-gradient(180deg, rgba(18,35,58,.92), rgba(11,22,39,.96)),
+        repeating-linear-gradient(0deg, rgba(95,195,255,.08) 0 1px, transparent 1px 28px),
+        repeating-linear-gradient(90deg, rgba(95,195,255,.08) 0 1px, transparent 1px 28px),
+        linear-gradient(135deg, #11243f, #153558 45%, #0b1728 100%);
+      box-shadow: inset 0 0 0 6px rgba(79,209,255,.14);
     }
     .thumbnail-block::before {
       content: "SCIENCE WEEKLY";
@@ -294,7 +294,7 @@
       position: absolute;
       inset: auto 16px 16px 16px;
       height: 58px;
-      background: linear-gradient(90deg, rgba(16,16,16,.88) 0 36%, rgba(16,16,16,.16) 36% 100%);
+      background: linear-gradient(90deg, rgba(16,16,16,.88) 0 36%, rgba(95,195,255,.16) 36% 100%);
       border-top: 4px solid var(--gold);
     }
     .thumb-grid {
@@ -306,8 +306,8 @@
     }
     .thumb-lead,
     .thumb-side {
-      border: 1px solid rgba(16,16,16,.16);
-      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(95,195,255,.16);
+      background: rgba(13,27,47,.72);
       padding: 12px;
       display: flex;
       flex-direction: column;
@@ -324,7 +324,7 @@
       display: block;
       height: 7px;
       margin-top: 8px;
-      background: linear-gradient(90deg, rgba(16,16,16,.85), rgba(16,16,16,.2));
+      background: linear-gradient(90deg, rgba(16,16,16,.85), rgba(95,195,255,.18));
     }
     .thumb-side span:nth-child(2),
     .thumb-lines span:nth-child(2) { width: 88%; }
@@ -336,7 +336,7 @@
       position: absolute;
       right: 18px;
       bottom: 30px;
-      color: #fff;
+      color: #eaf8ff;
       font-size: 14px;
       letter-spacing: .14em;
       text-transform: uppercase;
@@ -351,18 +351,18 @@
       grid-template-columns: 220px minmax(0, 1fr);
       gap: 18px;
       padding: 18px;
-      border-top: 1px solid #ece4d4;
-      background: linear-gradient(180deg, rgba(255,255,255,.2), rgba(255,255,255,.55));
+      border-top: 1px solid #223552;
+      background: linear-gradient(180deg, rgba(79,209,255,.22), rgba(255,255,255,.55));
     }
     .issue-card:first-child { border-top: 0; padding-top: 4px; }
     .issue-card .thumb {
       min-height: 170px;
       position: relative;
-      border: 1px solid #ccb78d;
+      border: 1px solid #2d4b74;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.9), rgba(244,235,214,.96)),
-        repeating-linear-gradient(0deg, rgba(16,16,16,.06) 0 1px, transparent 1px 24px),
-        linear-gradient(135deg, #f6ecd6, #ecd3a4 55%, #f9f4e7 100%);
+        linear-gradient(180deg, rgba(18,35,58,.94), rgba(11,22,39,.98)),
+        repeating-linear-gradient(0deg, rgba(95,195,255,.08) 0 1px, transparent 1px 24px),
+        linear-gradient(135deg, #11243f, #153558 55%, #0b1728 100%);
       overflow: hidden;
     }
     .issue-card .thumb::before {
@@ -400,8 +400,8 @@
     }
     .thumb-box,
     .thumb-column {
-      border: 1px solid rgba(16,16,16,.14);
-      background: rgba(255,255,255,.64);
+      border: 1px solid rgba(95,195,255,.14);
+      background: rgba(13,27,47,.72);
       padding: 9px;
     }
     .thumb-box strong {
@@ -416,7 +416,7 @@
       display: block;
       height: 6px;
       margin-top: 7px;
-      background: linear-gradient(90deg, rgba(16,16,16,.82), rgba(16,16,16,.16));
+      background: linear-gradient(90deg, rgba(16,16,16,.82), rgba(95,195,255,.16));
     }
     .thumb-column span:nth-child(2), .thumb-box span:nth-child(2) { width: 92%; }
     .thumb-column span:nth-child(3), .thumb-box span:nth-child(3) { width: 78%; }
@@ -454,8 +454,8 @@
       justify-content: center;
       width: 38px;
       height: 38px;
-      border: 1px solid #d8cfbd;
-      background: #fbf5e8;
+      border: 1px solid #223552;
+      background: rgba(79,209,255,.10);
     }
 +    .title-row {
 +      display: flex;
@@ -477,8 +477,8 @@
       justify-content: center;
       width: 38px;
       height: 38px;
-      border: 1px solid #d8cfbd;
-      background: #fbf5e8;
+      border: 1px solid #223552;
+      background: rgba(79,209,255,.10);
     }
     .status-badge {
       display: inline-flex;
@@ -486,9 +486,9 @@
       margin-left: 10px;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid #d2b475;
-      background: #f7e7bf;
-      color: #6b4d11;
+      border: 1px solid #4fbfff;
+      background: rgba(79,209,255,.14);
+      color: #dff8ff;
       font-size: 11px;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -497,9 +497,9 @@
     .quicklinks {
       margin-top: 18px;
       padding: 16px 18px;
-      border: 1px solid #ccb78d;
+      border: 1px solid #2d4b74;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.74), rgba(248,238,215,.95)),
+        linear-gradient(180deg, rgba(13,27,47,.78), rgba(248,238,215,.95)),
         repeating-linear-gradient(90deg, rgba(93,69,31,.06) 0 1px, transparent 1px 26px);
     }
     .action-row {
@@ -507,8 +507,8 @@
       grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 0;
       margin-top: 18px;
-      border: 1px solid #ccb78d;
-      background: #fffaf0;
+      border: 1px solid #2d4b74;
+      background: rgba(79,209,255,.06);
     }
     .action-row a {
       text-decoration: none;
@@ -518,8 +518,8 @@
       min-height: 52px;
       text-align: center;
       padding: 10px 8px;
-      border-right: 1px solid #ccb78d;
-      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(247,236,208,.92));
+      border-right: 1px solid #2d4b74;
+      background: linear-gradient(180deg, rgba(11,22,40,.96), rgba(247,236,208,.92));
       color: var(--accent-dark);
       font-size: 12px;
       font-weight: 700;
@@ -531,7 +531,7 @@
       border-right: 0;
     }
     .action-row a:hover {
-      background: linear-gradient(180deg, #fffdf8, #f3e3ba);
+      background: linear-gradient(180deg, #fffdf8, rgba(79,209,255,.18));
     }
     .quicklinks-title {
       display: flex;
@@ -544,7 +544,7 @@
       text-transform: uppercase;
       margin-bottom: 10px;
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(16,16,16,.16);
+      border-bottom: 1px solid rgba(95,195,255,.16);
     }
     .quicklinks-title::after {
       content: "Utility Desk";
@@ -556,8 +556,8 @@
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 0;
-      border: 1px solid #ccb78d;
-      background: #fffdf8;
+      border: 1px solid #2d4b74;
+      background: #0b1628;
     }
     .quicklinks-grid a {
       text-decoration: none;
@@ -566,13 +566,13 @@
       justify-content: center;
       min-height: 44px;
       padding: 10px 12px;
-      border-right: 1px solid #ccb78d;
+      border-right: 1px solid #2d4b74;
       color: var(--accent-dark);
       font-size: 12px;
       font-weight: 700;
       letter-spacing: .14em;
       text-transform: uppercase;
-      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(248,240,221,.94));
+      background: linear-gradient(180deg, rgba(11,22,40,.96), rgba(13,27,47,.92));
     }
     .quicklinks-grid a:last-child {
       border-right: 0;
@@ -601,7 +601,7 @@
       }
       .quicklinks-grid a {
         border-right: 0;
-        border-top: 1px solid #ccb78d;
+        border-top: 1px solid #2d4b74;
       }
       .quicklinks-grid a:first-child {
         border-top: 0;
@@ -619,7 +619,7 @@
       }
       .action-row a {
         border-right: 0;
-        border-top: 1px solid #ccb78d;
+        border-top: 1px solid #2d4b74;
       }
       .action-row a:first-child {
         border-top: 0;
@@ -638,7 +638,7 @@
     <header class="masthead">
       <div class="eyebrow">crazy-paper newsroom</div>
       <h1>Science Weekly</h1>
-      <p><a href="./journal-information.html" style="text-decoration:none; border-bottom:1px solid currentColor;">Journal Information</a></p>
+      <p><a href="./journal-information.html" style="text-decoration:none; border-bottom:1px solid currentColor; color: var(--accent-dark);">Journal Information</a></p>
       <nav class="lang-switch" aria-label="Language switcher">
         <a href="./index_cht.html">繁體中文首頁</a>
         <a class="active" href="./index_en.html">English Homepage</a>
