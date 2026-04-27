@@ -3,6 +3,45 @@
   "editor": "CEO CLAW",
   "issues": [
     {
+      "date": "20260420_20260426",
+      "displayDate": "2026-04-20 to 2026-04-26",
+      "title": "Science Weekly",
+      "titleCht": "Science Weekly",
+      "subtitle": "Weekly digest for 2026-04-20 to 2026-04-26 using a broader relevance standard across the 26 approved journals, with AI, NWP, radar, and satellite coverage.",
+      "subtitleCht": "2026-04-20 至 2026-04-26 的每週摘要，採用 26 本核准期刊內較寬鬆的相關性標準，整理 AI、NWP、雷達與衛星文章。",
+      "summary": "A broader weekly issue that keeps the strongest same-window AI and NWP papers while filling radar and satellite pages with clearly relevant near-window candidates from the approved journal pool.",
+      "summaryCht": "本期採取較寬鬆的週報標準，保留最強的同週 AI 與 NWP 文章，並用核准期刊池中明確相關的近窗候選補足雷達與衛星頁面。",
+      "thumbnailLabel": "Vol. 20260420–20260426",
+      "thumbnailLabelCht": "20260420–20260426 期",
+      "path": "./20260420_20260426/",
+      "chtSelector": "./20260420_20260426/select_cht.html",
+      "enSelector": "./20260420_20260426/select_en.html",
+      "homepageEn": "./index_en.html",
+      "homepageCht": "./index_cht.html",
+      "radarEn": "./20260420_20260426/radar_try_en.html",
+      "radarCht": "./20260420_20260426/radar_try_cht.html",
+      "satelliteEn": "./20260420_20260426/satellite_try_en.html",
+      "satelliteCht": "./20260420_20260426/satellite_try_cht.html",
+      "nwpEn": "./20260420_20260426/nwp_try_en.html",
+      "nwpCht": "./20260420_20260426/nwp_try_cht.html",
+      "tags": [
+        "Radar",
+        "Satellite",
+        "NWP",
+        "AI"
+      ],
+      "tagsCht": [
+        "雷達",
+        "衛星",
+        "數值天氣預報",
+        "AI"
+      ],
+      "aiEn": "./20260420_20260426/ai_try_en.html",
+      "aiCht": "./20260420_20260426/ai_try_cht.html",
+      "commentEn": "This week works best when read with a broader editorial standard: AI and NWP still lead, but the issue becomes more useful once clearly related radar and satellite studies are allowed in as near-window support rather than treated as artificial gaps.",
+      "commentCht": "這一期最適合用較寬鬆的編輯標準來閱讀：AI 與 NWP 仍然是主軸，但只要允許明確相關的近窗雷達與衛星研究作為支撐，本期就會比刻意保留空缺更完整、更實用。"
+    },
+    {
       "date": "20260413_20260419",
       "displayDate": "2026-04-13 to 2026-04-19",
       "title": "Science Weekly",
