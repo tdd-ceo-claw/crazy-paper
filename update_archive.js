@@ -9,7 +9,7 @@ if (fs.existsSync(archivePath)) {
 }
 
 const dirs = fs.readdirSync(repoRoot, { withFileTypes: true })
-  .filter(d => d.isDirectory() && /^\d{8}$/.test(d.name))
+  .filter(d => d.isDirectory() && (/^\d{8}$/.test(d.name) || /^\d{8}_\d{8}$/.test(d.name)))
   .map(d => d.name)
   .sort((a, b) => b.localeCompare(a));
 
@@ -18,7 +18,9 @@ const existingIssues = new Map((archive.issues || []).map(issue => [issue.date, 
 archive.issues = dirs.map(date => ({
   ...existingIssues.get(date),
   date,
-  displayDate: `${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6,8)}`,
+  displayDate: date.includes('_')
+    ? `${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6,8)} to ${date.slice(9,13)}-${date.slice(13,15)}-${date.slice(15,17)}`
+    : `${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6,8)}`,
   title: existingIssues.get(date)?.title || 'Science Weekly',
   subtitle: existingIssues.get(date)?.subtitle || 'Radar, satellite, and numerical weather prediction digest in a two-pane interactive layout.',
   path: `./${date}/`,

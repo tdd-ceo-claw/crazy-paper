@@ -727,6 +727,7 @@
         const leadSubtitle = latest.subtitle || latest.subtitleCht || '';
         const leadSummary = latest.summary || latest.summaryCht || leadSubtitle;
         const leadComment = latest.commentEn || leadSubtitle || 'A brief editorial note for this issue will appear here.';
+        const leadBadge = latest.displayDate || latest.date || 'Latest';
         const iconSets = [
           ['⛅','🌦️','📡'],
           ['🌤️','🌧️','🛰️'],
@@ -760,7 +761,7 @@
           <article class="lead-story lead-banner">
             <div class="banner-topline">
               <span>Front Page Feature</span>
-              <span class="banner-date">Updated: 2026-04-26</span>
+              <span class="banner-date">Updated: ${escapeHtml(leadBadge)}</span>
             </div>
             <h3 class="banner-headline">${escapeHtml(leadTitle)}</h3>
             <div class="banner-divider"></div>
@@ -791,7 +792,7 @@
               </div>
             </div>
             <div class="meta-strip">
-              <span>Updated: 2026-04-26</span>
+              <span>Updated: ${escapeHtml(leadBadge)}</span>
               <span>Focus: ${escapeHtml(leadSubtitle || 'Weekly science digest')}</span>
               <span>Edition: English</span>
             </div>
