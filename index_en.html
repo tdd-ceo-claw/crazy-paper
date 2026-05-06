@@ -664,19 +664,53 @@
     <section class="section">
       <div class="sectionhead">
         <h2>Latest Issue</h2>
-        <span>Auto-promoted front-page banner</span>
+        <span>Static front-page feature</span>
       </div>
       <div class="lead-layout" id="lead-story">
-        <article class="lead-story">
-          <div class="kicker">Front Page Feature</div>
-          <h3>Loading archive</h3>
-          <p>The latest issue will appear here automatically once the archive metadata loads.</p>
+        <article class="lead-story lead-banner">
+          <div class="banner-topline">
+            <span>Front Page Feature</span>
+            <span class="banner-date">Updated: 2026-04-27 to 2026-05-02</span>
+          </div>
+          <h3 class="banner-headline">Science Weekly</h3>
+          <div class="banner-divider"></div>
+          <p class="banner-deck">A same-window issue led by a clean tropical-cyclone radar paper, supported by short-range data assimilation, hurricane thermodynamic diagnosis, and AI-assisted forecast comparison.</p>
+          <div class="banner-highlights">
+            <div>
+              <strong>Edition</strong>
+              English landing page with bilingual issue switching.
+            </div>
+            <div>
+              <strong>Focus</strong>
+              Weekly digest for 2026-04-27 to 2026-05-02 centered on radar observations, forecast-system diagnostics, and an operational AI-versus-NWP comparison.
+            </div>
+            <div>
+              <strong>Status</strong>
+              Static latest-issue banner pinned to the current release.
+            </div>
+          </div>
+          <div class="quicklinks">
+            <div class="quicklinks-title">Latest issue utility bar</div>
+            <div class="quicklinks-grid">
+              <a href="./20260427_20260502/select_cht.html">Chinese</a>
+              <a href="./20260427_20260502/select_en.html">English</a>
+              <a href="./20260427_20260502/radar_try_en.html">Radar</a>
+              <a href="./20260427_20260502/satellite_try_en.html">Satellite</a>
+              <a href="./20260427_20260502/nwp_try_en.html">NWP</a>
+              <a href="./20260427_20260502/ai_try_en.html">AI</a>
+            </div>
+          </div>
+          <div class="meta-strip">
+            <span>Updated: 2026-04-27 to 2026-05-02</span>
+            <span>Focus: Weekly digest for 2026-04-27 to 2026-05-02 centered on radar observations, forecast-system diagnostics, and an operational AI-versus-NWP comparison.</span>
+            <span>Edition: English</span>
+          </div>
         </article>
         <aside class="lead-panel">
           <div class="thumbnail-block">
             <div class="thumb-grid">
               <div class="thumb-lead">
-                <strong>Lead</strong>
+                <strong>04/27</strong>
                 <div class="thumb-lines">
                   <span></span><span></span><span></span>
                 </div>
@@ -685,11 +719,12 @@
                 <span></span><span></span><span></span><span></span>
               </div>
             </div>
-            <div class="thumb-label">Latest Issue</div>
+            <div class="thumb-label">Vol. 20260427–20260502</div>
           </div>
           <div>
             <div class="kicker">Issue Desk</div>
-            <p style="margin:8px 0 0; color: var(--muted); line-height: 1.85;">This front page reads the most recent issue from <code>archive.json</code>, so the homepage headline advances with the archive.</p>
+            <p style="margin:8px 0 0; color: var(--muted); line-height: 1.85;">This week reads best as a systems issue: radar supplies the clearest observing anchor, NWP carries the technical depth, and AI matters because it is tested against a real forecast problem instead of being waved around as branding.</p>
+            <div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌧️</span><span>🛰️</span></div>
           </div>
         </aside>
       </div>
@@ -738,11 +773,6 @@
         const latest = issues[0];
 
         const leadStory = document.getElementById('lead-story');
-        const leadTitle = latest.title || latest.titleCht || 'Science Weekly';
-        const leadSubtitle = latest.subtitle || latest.subtitleCht || '';
-        const leadSummary = latest.summary || latest.summaryCht || leadSubtitle;
-        const leadComment = latest.commentEn || leadSubtitle || 'A brief editorial note for this issue will appear here.';
-        const leadBadge = latest.displayDate || latest.date || 'Latest';
         const iconSets = [
           ['⛅','🌦️','📡'],
           ['🌤️','🌧️','🛰️'],
@@ -771,69 +801,6 @@
         const leadSatelliteHref = latestLinks.openSatellite;
         const leadNwpHref = latestLinks.openNwp;
         const leadAiHref = latestLinks.openAi;
-
-        leadStory.innerHTML = `
-          <article class="lead-story lead-banner">
-            <div class="banner-topline">
-              <span>Front Page Feature</span>
-              <span class="banner-date">Updated: ${escapeHtml(leadBadge)}</span>
-            </div>
-            <h3 class="banner-headline">${escapeHtml(leadTitle)}</h3>
-            <div class="banner-divider"></div>
-            <p class="banner-deck">${escapeHtml(leadSummary)}</p>
-            <div class="banner-highlights">
-              <div>
-                <strong>Edition</strong>
-                English landing page with bilingual issue switching.
-              </div>
-              <div>
-                <strong>Focus</strong>
-                ${escapeHtml(leadSubtitle || 'Weekly science digest')}
-              </div>
-              <div>
-                <strong>Status</strong>
-                Live archive banner for the newest issue.
-              </div>
-            </div>
-            <div class="quicklinks">
-              <div class="quicklinks-title">Latest issue utility bar</div>
-              <div class="quicklinks-grid">
-                <a href="${escapeHtml(leadChtHref)}">Chinese</a>
-                <a href="${escapeHtml(leadMainHref)}">English</a>
-                <a href="${escapeHtml(leadRadarHref)}">Radar</a>
-                <a href="${escapeHtml(leadSatelliteHref)}">Satellite</a>
-                <a href="${escapeHtml(leadNwpHref)}">NWP</a>
-                <a href="${escapeHtml(leadAiHref)}">AI</a>
-              </div>
-            </div>
-            <div class="meta-strip">
-              <span>Updated: ${escapeHtml(leadBadge)}</span>
-              <span>Focus: ${escapeHtml(leadSubtitle || 'Weekly science digest')}</span>
-              <span>Edition: English</span>
-            </div>
-          </article>
-          <aside class="lead-panel">
-            <div class="thumbnail-block">
-              <div class="thumb-grid">
-                <div class="thumb-lead">
-                  <strong>${escapeHtml((latest.displayDate || latest.date || '').slice(5).replace('-', '/')) || 'Lead'}</strong>
-                  <div class="thumb-lines">
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
-                <div class="thumb-side">
-                  <span></span><span></span><span></span><span></span>
-                </div>
-              </div>
-              <div class="thumb-label">${escapeHtml(latest.thumbnailLabel || latest.thumbnailLabelCht || latest.displayDate || 'Latest')}</div>
-            </div>
-            <div>
-              <div class="kicker">Issue Desk</div>
-              <p style="margin:8px 0 0; color: var(--muted); line-height: 1.85;">${escapeHtml(leadComment)}</p>
-              <div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌧️</span><span>🛰️</span></div>
-            </div>
-          </aside>
-        `;
 
         const grid = document.getElementById('issue-grid');
         grid.innerHTML = issues.map((issue, index) => {

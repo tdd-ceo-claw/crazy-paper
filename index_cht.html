@@ -620,19 +620,38 @@
     <section class="section lead-section">
       <div class="sectionhead" style="padding: 20px 24px 14px; margin: 0; background: linear-gradient(180deg, rgba(14,28,47,.96), rgba(12,24,42,.98)); border-bottom: 1px solid rgba(16,16,16,.1);">
         <h2>最新一期</h2>
-        <span>頭版橫幅・自動載入</span>
+        <span>頭版橫幅・靜態主打</span>
       </div>
       <div class="lead-layout" id="lead-story">
         <article class="lead-story">
-          <div class="kicker">Front Page Feature</div>
-          <h3>檔案載入中</h3>
-          <p>正在讀取最新一期內容，請稍候。</p>
+          <div class="kicker">Front Page Banner</div>
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:10px; color:rgba(247,240,223,.8);">
+            <span style="border:1px solid rgba(79,209,255,.22); padding:6px 10px; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">2026-04-27 to 2026-05-02</span>
+            <span style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#f2c56d;">Latest Edition</span>
+          </div>
+          <h3>2026-04-27 to 2026-05-02｜Science Weekly</h3>
+          <p>本期由一篇乾淨的熱帶氣旋雷達觀測文章帶頭，並以短時同化、颶風熱力診斷，以及 AI 輔助預報比較研究作為支撐。</p>
+          <div class="quick-links">
+            <h4>Latest Edition</h4>
+            <div class="quick-link-row">
+              <a href="./20260427_20260502/select_cht.html">中文</a>
+              <a href="./20260427_20260502/select_en.html">English</a>
+              <a href="./20260427_20260502/radar_try_cht.html">雷達</a>
+              <a href="./20260427_20260502/satellite_try_cht.html">衛星</a>
+              <a href="./20260427_20260502/nwp_try_cht.html">NWP</a>
+              <a href="./20260427_20260502/ai_try_cht.html">AI</a>
+            </div>
+          </div>
+          <div class="meta-strip">
+            <span>更新日期：2026-04-27 to 2026-05-02</span>
+            <span>主題：2026-04-27 至 2026-05-02 的每週摘要，主軸是雷達觀測、預報系統診斷，以及具作業意義的 AI 對比 NWP 研究。</span>
+          </div>
         </article>
         <aside class="lead-panel">
           <div class="thumbnail-block">
             <div class="thumb-grid">
               <div class="thumb-lead">
-                <strong>Lead</strong>
+                <strong>04/27</strong>
                 <div class="thumb-lines">
                   <span></span><span></span><span></span>
                 </div>
@@ -641,11 +660,12 @@
                 <span></span><span></span><span></span><span></span>
               </div>
             </div>
-            <div class="thumb-label" id="lead-thumbnail-label">最新一期</div>
+            <div class="thumb-label">20260427–20260502 期</div>
           </div>
           <div id="lead-side-copy">
-            <div class="kicker" style="color:#f2c56d;">Issue Desk</div>
-            <p style="margin:8px 0 0; color: rgba(225,241,255,.78); line-height: 1.85;">首頁主打會自動指向 <code style="color:#fff4d3;">archive.json</code> 中最新的一期，避免每次更新都要手動改寫頭條內容。</p>
+            <div class="kicker" style="color:#f2c56d;">編輯手記</div>
+            <p style="margin:8px 0 0; color: rgba(225,241,255,.78); line-height: 1.85;">這一期最適合當成系統型 issue 來看：雷達提供最乾淨的觀測錨點，NWP 承擔技術深度，而 AI 的價值在於它被放進真實預報問題裡比較，而不是只拿來當標語。</p>
+            <div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌧️</span><span>🛰️</span></div>
           </div>
         </aside>
       </div>
@@ -701,70 +721,6 @@
         ];
 
         const leadStory = document.getElementById('lead-story');
-        const leadLabel = document.getElementById('lead-thumbnail-label');
-        const leadTitle = latest.titleCht || latest.title || 'Science Weekly';
-        const leadSubtitle = latest.subtitleCht || latest.subtitle || '';
-        const leadSummary = latest.summaryCht || latest.summary || leadSubtitle;
-        const leadComment = latest.commentCht || leadSubtitle || '這裡會顯示本期的簡短編輯觀察。';
-        const leadMainHref = latest.chtSelector || latest.path || './';
-        const leadEnHref = latest.enSelector || './index_en.html';
-        const leadAltHref = latest.path || leadMainHref;
-        const latestBasePath = latest.path || './';
-        const leadRadarHref = latest.radarCht || `${latestBasePath}radar_try_cht.html`;
-        const leadSatelliteHref = latest.satelliteCht || `${latestBasePath}satellite_try_cht.html`;
-        const leadNwpHref = latest.nwpCht || `${latestBasePath}nwp_try_cht.html`;
-        const leadAiHref = latest.aiCht || `${latestBasePath}ai_try_cht.html`;
-        const leadBadge = latest.displayDate || latest.date || 'Latest';
-
-        leadStory.innerHTML = `
-          <article class="lead-story">
-            <div class="kicker">Front Page Banner</div>
-            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:10px; color:rgba(247,240,223,.8);">
-              <span style="border:1px solid rgba(79,209,255,.22); padding:6px 10px; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">${escapeHtml(leadBadge)}</span>
-              <span style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#f2c56d;">Latest Edition</span>
-            </div>
-            <h3>${escapeHtml((latest.displayDate || latest.date || '') + '｜' + leadTitle)}</h3>
-            <p>${escapeHtml(leadSummary)}</p>
-            <div class="quick-links">
-              <h4>Latest Edition</h4>
-              <div class="quick-link-row">
-                <a href="${escapeHtml(leadMainHref)}">中文</a>
-                <a href="${escapeHtml(leadEnHref)}">English</a>
-                <a href="${escapeHtml(leadRadarHref)}">雷達</a>
-                <a href="${escapeHtml(leadSatelliteHref)}">衛星</a>
-                <a href="${escapeHtml(leadNwpHref)}">NWP</a>
-                <a href="${escapeHtml(leadAiHref)}">AI</a>
-              </div>
-            </div>
-            <div class="meta-strip">
-              <span>更新日期：${escapeHtml(leadBadge)}</span>
-              <span>主題：${escapeHtml(leadSubtitle || '每週科學摘要')}</span>
-            </div>
-          </article>
-          <aside class="lead-panel">
-            <div class="thumbnail-block">
-              <div class="thumb-grid">
-                <div class="thumb-lead">
-                  <strong>${escapeHtml((latest.displayDate || latest.date || '').slice(5).replace('-', '/')) || 'Lead'}</strong>
-                  <div class="thumb-lines">
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
-                <div class="thumb-side">
-                  <span></span><span></span><span></span><span></span>
-                </div>
-              </div>
-              <div class="thumb-label">${escapeHtml(latest.thumbnailLabelCht || latest.thumbnailLabel || latest.displayDate || 'Latest')}</div>
-            </div>
-            <div>
-              <div class="kicker" style="color:#f2c56d;">編輯手記</div>
-              <p style="margin:8px 0 0; color: rgba(225,241,255,.78); line-height: 1.85;">${escapeHtml(leadComment)}</p>
-              <div class="comment-icons" aria-label="weather-themed icons"><span>⛅</span><span>🌧️</span><span>🛰️</span></div>
-            </div>
-          </aside>
-        `;
-        leadLabel.textContent = latest.thumbnailLabelCht || latest.thumbnailLabel || latest.displayDate || '最新一期';
-
         const grid = document.getElementById('issue-grid');
         grid.innerHTML = issues.map((issue, index) => {
           const title = issue.titleCht || issue.title || 'Science Weekly';
