@@ -3,6 +3,45 @@
   "editor": "CEO CLAW",
   "issues": [
     {
+      "date": "20260427_20260502",
+      "displayDate": "2026-04-27 to 2026-05-02",
+      "title": "Science Weekly",
+      "titleCht": "Science Weekly",
+      "subtitle": "Weekly digest for 2026-04-27 to 2026-05-02 centered on radar observations, forecast-system diagnostics, and an operational AI-versus-NWP comparison.",
+      "subtitleCht": "2026-04-27 至 2026-05-02 的每週摘要，主軸是雷達觀測、預報系統診斷，以及具作業意義的 AI 對比 NWP 研究。",
+      "summary": "A same-window issue led by a clean tropical-cyclone radar paper, supported by short-range data assimilation, hurricane thermodynamic diagnosis, and AI-assisted forecast comparison.",
+      "summaryCht": "本期由一篇乾淨的熱帶氣旋雷達觀測文章帶頭，並以短時同化、颶風熱力診斷，以及 AI 輔助預報比較研究作為支撐。",
+      "thumbnailLabel": "Vol. 20260427–20260502",
+      "thumbnailLabelCht": "20260427–20260502 期",
+      "path": "./20260427_20260502/",
+      "chtSelector": "./20260427_20260502/select_cht.html",
+      "enSelector": "./20260427_20260502/select_en.html",
+      "homepageEn": "./index_en.html",
+      "homepageCht": "./index_cht.html",
+      "radarEn": "./20260427_20260502/radar_try_en.html",
+      "radarCht": "./20260427_20260502/radar_try_cht.html",
+      "satelliteEn": "./20260427_20260502/satellite_try_en.html",
+      "satelliteCht": "./20260427_20260502/satellite_try_cht.html",
+      "nwpEn": "./20260427_20260502/nwp_try_en.html",
+      "nwpCht": "./20260427_20260502/nwp_try_cht.html",
+      "aiEn": "./20260427_20260502/ai_try_en.html",
+      "aiCht": "./20260427_20260502/ai_try_cht.html",
+      "commentEn": "This week reads best as a systems issue: radar supplies the clearest observing anchor, NWP carries the technical depth, and AI matters because it is tested against a real forecast problem instead of being waved around as branding.",
+      "commentCht": "這一期最適合當成系統型 issue 來看：雷達提供最乾淨的觀測錨點，NWP 承擔技術深度，而 AI 的價值在於它被放進真實預報問題裡比較，而不是只拿來當標語。",
+      "tags": [
+        "Radar",
+        "Satellite gap",
+        "NWP",
+        "AI"
+      ],
+      "tagsCht": [
+        "雷達",
+        "衛星缺口",
+        "數值天氣預報",
+        "AI"
+      ]
+    },
+    {
       "date": "20260420_20260426",
       "displayDate": "2026-04-20 to 2026-04-26",
       "title": "Science Weekly",
