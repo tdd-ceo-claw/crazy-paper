@@ -602,6 +602,21 @@
       </nav>
     </header>
 
+    <section class="section" style="padding:18px 24px;">
+      <div class="sectionhead">
+        <h2>最新一期快捷入口</h2>
+        <span>靜態保底</span>
+      </div>
+      <div class="action-row" style="grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top:0;">
+        <a href="./20260427_20260502/select_cht.html">中文</a>
+        <a href="./20260427_20260502/select_en.html">English</a>
+        <a href="./20260427_20260502/radar_try_cht.html">雷達</a>
+        <a href="./20260427_20260502/satellite_try_cht.html">衛星</a>
+        <a href="./20260427_20260502/nwp_try_cht.html">NWP</a>
+        <a href="./20260427_20260502/ai_try_cht.html">AI</a>
+      </div>
+    </section>
+
     <section class="section lead-section">
       <div class="sectionhead" style="padding: 20px 24px 14px; margin: 0; background: linear-gradient(180deg, rgba(14,28,47,.96), rgba(12,24,42,.98)); border-bottom: 1px solid rgba(16,16,16,.1);">
         <h2>最新一期</h2>
@@ -670,7 +685,7 @@
       "'": '&#39;'
     }[char]));
 
-    fetch('./archive.json')
+    fetch(`./archive.json?v=${Date.now()}`, { cache: 'no-store' })
       .then(response => response.ok ? response.json() : null)
       .then(data => {
         if (!data || !Array.isArray(data.issues) || !data.issues.length) return;

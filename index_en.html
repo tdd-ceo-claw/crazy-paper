@@ -646,6 +646,21 @@
       </nav>
     </header>
 
+    <section class="section" style="padding:18px 24px;">
+      <div class="sectionhead">
+        <h2>Latest issue quick entry</h2>
+        <span>Static fallback</span>
+      </div>
+      <div class="action-row" style="grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top:0;">
+        <a href="./20260427_20260502/select_cht.html">Chinese</a>
+        <a href="./20260427_20260502/select_en.html">English</a>
+        <a href="./20260427_20260502/radar_try_en.html">Radar</a>
+        <a href="./20260427_20260502/satellite_try_en.html">Satellite</a>
+        <a href="./20260427_20260502/nwp_try_en.html">NWP</a>
+        <a href="./20260427_20260502/ai_try_en.html">AI</a>
+      </div>
+    </section>
+
     <section class="section">
       <div class="sectionhead">
         <h2>Latest Issue</h2>
@@ -714,7 +729,7 @@
       "'": '&#39;'
     }[char]));
 
-    fetch('./archive.json')
+    fetch(`./archive.json?v=${Date.now()}`, { cache: 'no-store' })
       .then(response => response.ok ? response.json() : null)
       .then(data => {
         if (!data || !Array.isArray(data.issues) || !data.issues.length) return;
